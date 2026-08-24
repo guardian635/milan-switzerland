@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>J人行程表｜台北 → 米蘭 → 瑞士 14 日</title>
+  <meta name="description" content="J 人專用 14 日行程：台北直飛米蘭、科莫湖、琉森、少女峰、策馬特。每段標明租車與否、火車／車程、飯店抵達時間。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#days">跳到每日行程</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">J</span>
+      <div>
+        <p class="eyebrow">14-DAY DOSSIER · 2027.01.30 · CET 冬天時區</p>
+        <h1>台北飛米蘭，接著瑞士，再回台灣</h1>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="#tickets">艙等／早鳥</a>
+      <a href="#hotels">住宿／必住</a>
+      <a href="#budget">預算</a>
+      <a href="#days">每日行程</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <figure class="hero-media">
+      <img id="hero-img" src="photos/duomo.jpg" alt="米蘭大教堂 Piazza del Duomo" />
+      <figcaption>真實照片來源：Wikimedia Commons</figcaption>
+    </figure>
+    <div class="hero-copy">
+      <p class="kicker">2027.01.30 出發 · 隆冬雪景 · EVA BR95／BR96 · 含冰河列車</p>
+      <h2>給把時間寫進行事曆的人。</h2>
+      <p class="lede">出發日已鎖定 <strong>2027 年 1 月 30 日（六）夜航</strong>。這是阿爾卑斯的真冬天：少女峰、策馬特、冰河列車都是白雪，不是夏天的綠草地。路線改為台北→米蘭→琉森→少女峰→策馬特→<strong>冰河列車到聖莫里茲</strong>→伯恩尼納出義大利回米蘭再回台。</p>
+      <div class="hero-controls">
+        <label>
+          第 1 天出發日（已固定）
+          <input type="date" id="start-date" value="2027-01-30" readonly />
+        </label>
+        <p class="hint">1/30 出發＝歐洲冬天時區 CET（台灣 −7 小時）。回程 2/12 米蘭起飛，2/13 清晨到桃園。時刻表全部是當地時間。</p>
+      </div>
+      <dl class="stats" id="stats"></dl>
+    </div>
+  </section>
+
+  <section class="season" id="season">
+    <h2>1/30 出發，你會看到什麼</h2>
+    <p class="lede">答案：<strong>瑞士段幾乎全是雪景</strong>。米蘭、科莫是灰冷的冬天城市與湖，不是雪國；一進阿爾卑斯就是白的。白天短，約 08:00 天亮、17:15 天黑，行程已按冬日收短。</p>
+    <div class="season-grid" id="season-grid"></div>
+  </section>
+
+  <section class="route" id="route">
+    <h2>路線一覽</h2>
+    <ol class="route-line" id="route-line"></ol>
+    <svg class="route-svg" viewBox="0 0 900 220" role="img" aria-label="台北到米蘭到瑞士再回台北的路線示意">
+      <defs>
+        <linearGradient id="track" x1="0" x2="1">
+          <stop offset="0" stop-color="#c45c26" />
+          <stop offset="0.35" stop-color="#1a1f2e" />
+          <stop offset="1" stop-color="#2f6f6a" />
+        </linearGradient>
+      </defs>
+      <path d="M40 150 C 160 40, 280 40, 360 110 S 520 210, 620 120 S 780 30, 860 70" fill="none" stroke="url(#track)" stroke-width="4" />
+      <g font-family="Noto Sans TC, sans-serif" font-size="13" fill="#1a1f2e">
+        <circle cx="40" cy="150" r="7" fill="#c45c26" /><text x="40" y="178" text-anchor="middle">台北 TPE</text>
+        <circle cx="360" cy="110" r="7" fill="#1a1f2e" /><text x="360" y="92" text-anchor="middle">米蘭 MXP</text>
+        <circle cx="500" cy="168" r="6" fill="#2f6f6a" /><text x="500" y="196" text-anchor="middle">科莫湖</text>
+        <circle cx="620" cy="120" r="7" fill="#2f6f6a" /><text x="620" y="96" text-anchor="middle">琉森</text>
+        <circle cx="700" cy="70" r="7" fill="#2f6f6a" /><text x="700" y="50" text-anchor="middle">少女峰</text>
+        <circle cx="790" cy="95" r="7" fill="#2f6f6a" /><text x="790" y="118" text-anchor="middle">策馬特</text>
+        <circle cx="860" cy="55" r="7" fill="#c45c26" /><text x="860" y="38" text-anchor="middle">聖莫里茲</text>
+      </g>
+    </svg>
+  </section>
+
+  <section class="verdict" id="verdict">
+    <div class="verdict-card">
+      <p class="kicker">J 人交通裁決</p>
+      <h2>全程不租車。</h2>
+      <p>米蘭有 ZTL 限行與停車地獄；科莫湖精華在船上；琉森／茵特拉肯／策馬特的真正風景在齒軌列車與纜車上，車開不到。策馬特全鎮禁車。瑞士高速公路還要買 vignette。對這條「米蘭進、阿爾卑斯三角、米蘭出」的路線，<strong>Swiss Travel Pass 8 日（約 CHF 439／2 等）＋義大利段點對點火車票</strong>比較準、比較不累。</p>
+      <ul class="verdict-list">
+        <li><span>義大利段</span>Malpensa Express、米蘭地鐵、科莫湖船班。自駕只省表面時間，塞車與還車會吃掉緩衝。</li>
+        <li><span>瑞士段</span>SBB 準點率高。這次核心是 <strong>2/9 冰河列車</strong>、少女峰、戈爾內格拉特，全部不是開車能替代的。</li>
+        <li><span>唯一可考慮租車的半天</span>勞特布倫能山谷停車看瀑布——但火車 20 分就到，J 人結論仍是不租。</li>
+      </ul>
+    </div>
+    <aside class="compare">
+      <h3>轉場時間對照</h3>
+      <table>
+        <thead>
+          <tr><th>路段</th><th>火車／大眾運輸</th><th>若租車</th></tr>
+        </thead>
+        <tbody id="compare-body"></tbody>
+      </table>
+      <p class="fine">車程為 Google Maps 一般路況估算，不含找停車。火車為常見班次，出發前以 Trenitalia／SBB App 為準。</p>
+    </aside>
+  </section>
+
+  <nav class="day-rail" id="day-rail" aria-label="14 日快速跳轉"></nav>
+
+  <section class="days" id="days">
+    <div class="days-head">
+      <h2>14 日時間表</h2>
+      <p>點開每一天看景點照片、時刻、租車裁決、飯店抵達。時刻已含緩衝，不要再砍。</p>
+    </div>
+    <div id="day-list"></div>
+  </section>
+
+  <section class="tickets" id="tickets">
+    <h2>必須提前買票 · 有高級艙的會標出來</h2>
+    <p>機票以外，<strong>現在（2026 年 8 月）真正該訂的只有飯店</strong>，以及如果你要坐冰河列車尊爵艙。其餘設日曆，開賣再搶。紅色＝不買上不了；深色金框＝建議升級的艙等。</p>
+    <div class="ticket-grid" id="ticket-list"></div>
+  </section>
+
+  <section class="hotels" id="hotels">
+    <h2>住宿：普通 vs 必住（Booking 即時價）</h2>
+    <p>Booking.com 不讓把房價嵌進別人的網頁，所以參考數字是 2026-08-24 依冬季公開行情估算的「一晚雙人房」。<strong>真正即時庫存與價格，按按鈕會用你的入住日打開 Booking</strong>。二月滑雪旺季，策馬特與聖莫里茲請今天就點進去訂（選免費取消）。</p>
+    <p class="fine">匯率參考 CHF 1＝NT$39、EUR 1＝NT$36。單人房不是半價。必住＝這段旅程有畫面的那一間，不是隨便五星。</p>
+    <div id="hotel-list"></div>
+  </section>
+
+  <section class="budget" id="budget">
+    <h2>預算估算：全部普通 vs 全部最高等</h2>
+    <p>以 <strong>2 成人、1 間雙人房</strong> 計算。機票、通行證、座位是兩人合計；飯店是一間房的晚數。不含購物、不含滑雪板租賃。</p>
+    <div class="budget-summary" id="budget-summary"></div>
+    <div class="budget-table-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>類</th>
+            <th>項目</th>
+            <th>普通</th>
+            <th>全部最高等</th>
+          </tr>
+        </thead>
+        <tbody id="budget-body"></tbody>
+        <tfoot id="budget-foot"></tfoot>
+      </table>
+    </div>
+    <p class="fine">這不是報價單。機票以長榮官網為準；房價以你點進 Booking 當下為準；冰河列車 Excellence 以 glacierexpress.ch 為準。瑞士餐飲與旺季房價波動可以到 ±30%。</p>
+  </section>
+
+  <section class="bookings" id="bookings">
+    <h2>出發前時間軸</h2>
+    <ol id="booking-list"></ol>
+  </section>
+
+  <section class="checklist" id="checklist">
+    <h2>J 人出發清單</h2>
+    <p>勾選會存在這台瀏覽器。沒勾完就不要出門。</p>
+    <div class="check-grid" id="check-grid"></div>
+  </section>
+
+  <section class="credits" id="credits">
+    <h2>照片來源</h2>
+    <p>所有景點圖均為 Wikimedia Commons 真實攝影／公有領域作品，不是 AI 生成。完整授權見各圖說明。</p>
+    <ul id="credit-list"></ul>
+  </section>
+
+  <footer class="site-foot">
+    <p>時刻為規劃用，非即時班表。航班以長榮 BR95／BR96 夏秋季典型時刻為底：TPE 23:55 → MXP 07:35+1；MXP 11:15 → TPE 06:05+1。請在購票後覆核。</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lb-close" aria-label="關閉">×</button>
+    <img alt="" />
+    <p></p>
+  </div>
+
+  <script src="js/budget.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
