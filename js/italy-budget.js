@@ -103,13 +103,13 @@ const STAYS = [
   {
     id: "rome",
     place: "羅馬 Prati／特拉斯提弗列",
-    nights: 5,
+    nights: 7,
     inn: "2027-02-14",
-    out: "2027-02-19",
-    why: "D9–D13　梵蒂岡／競技場／市區逛街",
+    out: "2027-02-21",
+    why: "D9–D15　梵蒂岡／競技場／逛街／2/21 FCO 早飛",
     apt: {
-      name: "Prati 或 Trastevere 整套（6 人、3 房）",
-      note: "Prati 走梵蒂岡近、地鐵 A 線；Trastevere 晚上好散步但拖箱過石板路。Termini 附近便宜但六人冬夜不建議。英國 half-term 重疊，早訂。",
+      name: "Prati 或 Termini 地鐵 15 分內整套（6 人、3 房）",
+      note: "Prati 走梵蒂岡近。2/21 要去 Termini 搭 Leonardo Express，住太深的 Trastevere 早飛會痛。英國 half-term 重疊，早訂。",
       night: 390, cur: "EUR",
       search: "Rome Prati",
     },
@@ -124,32 +124,6 @@ const STAYS = [
       note: "Hassler 在西班牙階梯頂。六人優先套房或兩間連通，不要三間總統。",
       night: 1200, cur: "EUR",
       aptNight: 900, aptCur: "EUR",
-    },
-  },
-  {
-    id: "milan",
-    place: "米蘭 Centrale／杜奧莫",
-    nights: 2,
-    inn: "2027-02-19",
-    out: "2027-02-21",
-    why: "D14–D15　最後的晚餐、金四角、Outlet、2/21 早飛",
-    apt: {
-      name: "中央車站整套公寓（6 人）",
-      note: "2/21 06:30 出門去 MXP，車站 8 分內是硬條件。Outlet 大袋也比較好拖。杜奧莫漂亮但早飛不划算。",
-      night: 300, cur: "EUR",
-      search: "Milano Centrale",
-    },
-    hotel3: {
-      name: "Hotel Berna／車站 4 星 × 3",
-      note: "備飛穩。三間加總仍比包棟貴。",
-      night: 200, cur: "EUR",
-    },
-    high: {
-      name: "Excelsior Gallia／Park Hyatt × 家庭套房",
-      must: true,
-      note: "Gallia 連著 Centrale，早飛最穩。Park Hyatt 在杜奧莫，2/21 要多留 20 分地鐵。",
-      night: 680, cur: "EUR",
-      aptNight: 520, aptCur: "EUR",
     },
   },
 ];
@@ -170,25 +144,24 @@ function highAptTotal(stay) {
 const BUDGET_ROWS = [
   {
     group: "機票",
-    name: "長榮來回　4 成人＋2 兒童（估兒童 75%）",
-    std: { twd: 68000 * 4 + 51000 * 2, note: "經濟艙。2/6 是農曆大年夜，TPE–MXP 旺季，比 1/30 那趟貴。兒童滿 12 歲改全票。" },
-    high: { twd: 180000 * 4 + 135000 * 2, note: "皇家商務艙。13 小時夜航，去程升等最有感。小孩也可改豪華經濟。" },
+    name: "開腳　長榮 BR95 ＋ 華航 CI76　4 成人＋2 兒童（估兒童 75%）",
+    std: { twd: 68000 * 4 + 51000 * 2, note: "兩段單程估。2/6 大年夜 TPE–MXP 旺季。回程 CI76 不是每天飛，2/21 週日要先對班表。拆票比來回套票貴一點。" },
+    high: { twd: 180000 * 4 + 135000 * 2, note: "去程長榮商務＋回程華航商務。小孩也可改豪華經濟。" },
   },
   { group: "住宿", name: "威尼斯 3 晚（嘉年華）", stayId: "venice" },
   { group: "住宿", name: "佛羅倫斯 4 晚", stayId: "florence" },
-  { group: "住宿", name: "羅馬 5 晚", stayId: "rome" },
-  { group: "住宿", name: "米蘭 Centrale 2 晚", stayId: "milan" },
+  { group: "住宿", name: "羅馬 7 晚", stayId: "rome" },
   {
     group: "義大利交通",
-    name: "Frecciarossa 四段　六人對號入座",
-    std: { twd: twd(45 * 4 * 4 + 22 * 2 * 4, "EUR"), note: "2 等 Super Economy 早鳥。路段：米蘭→威尼斯、威尼斯→佛羅倫斯、佛羅倫斯→羅馬、羅馬→米蘭。小孩 4–14 常半價。" },
-    high: { twd: twd(95 * 4 * 4 + 48 * 2 * 4, "EUR"), note: "Business 商務艙。六人家庭意義不大，Standard 對號即可。" },
+    name: "Frecciarossa 三段　六人對號入座",
+    std: { twd: twd(45 * 4 * 3 + 22 * 2 * 3, "EUR"), note: "2 等 Super Economy。米蘭→威尼斯、威尼斯→佛羅倫斯、佛羅倫斯→羅馬。小孩 4–14 常半價。" },
+    high: { twd: twd(95 * 4 * 3 + 48 * 2 * 3, "EUR"), note: "Business。家庭意義不大，Standard 即可。" },
   },
   {
     group: "義大利交通",
     name: "機場快線、vaporetto、羅馬地鐵、Outlet 接駁",
-    std: { twd: twd(15 * 6 * 2 + 45 * 6 + 25 * 6 + 25 * 4 + 10 * 2, "EUR"), note: "Malpensa Express 來回、威尼斯 3 日卡、羅馬 72h、Serravalle 接駁。不含計程車。" },
-    high: { twd: twd(110 * 2 + 45 * 6 + 40 * 6 + 180, "EUR"), note: "MXP 定價計程車來回＋vaporetto＋私人車去 Outlet" },
+    std: { twd: twd(15 * 6 + 14 * 6 + 45 * 6 + 25 * 6 + 20 * 6, "EUR"), note: "Malpensa Express 單程、Leonardo Express、威尼斯 3 日卡、羅馬 72h、Castel Romano 接駁（不去就刪）。" },
+    high: { twd: twd(110 + 50 * 2 + 45 * 6 + 40 * 6 + 120, "EUR"), note: "MXP 計程車＋FCO 定價車＋vaporetto＋私人車去 Outlet" },
   },
   {
     group: "門票",
@@ -210,9 +183,9 @@ const BUDGET_ROWS = [
   },
   {
     group: "門票",
-    name: "最後的晚餐＋米蘭大教堂屋頂",
-    std: { twd: twd(15 * 4 + 20 * 6, "EUR"), note: "Cenacolo 未滿 18 免費仍要預約。屋頂選電梯。" },
-    high: { twd: twd(15 * 4 + 45 * 6, "EUR"), note: "加導覽／快速通道" },
+    name: "聖天使堡（最後的晚餐這次不定）",
+    std: { twd: twd(16 * 4 + 8 * 2, "EUR"), note: "開腳不住米蘭，Cenacolo／屋頂刪。聖天使堡兒童減免依年齡。" },
+    high: { twd: twd(30 * 6, "EUR"), note: "加導覽。若堅持最後的晚餐，整條路線要改回米蘭飛。" },
   },
   {
     group: "餐食",
@@ -343,13 +316,13 @@ function renderBudget() {
       <p class="tag">普通 · 包棟分擔</p>
       <h3>NT$${stdSum.toLocaleString("zh-Hant")}</h3>
       <p>六人合計　每人約 NT$${per6std.toLocaleString("zh-Hant")}</p>
-      <p>經濟艙（春節旺季）＋ Freccia 2 等＋整套公寓</p>
+      <p>開腳經濟艙（春節旺季）＋ Freccia 2 等＋整套公寓</p>
     </article>
     <article class="high">
       <p class="tag">全部最高等 · 必住 ×3 間</p>
       <h3>NT$${highSum.toLocaleString("zh-Hant")}</h3>
       <p>六人合計　每人約 NT$${per6high.toLocaleString("zh-Hant")}</p>
-      <p>商務艙＋Freccia Business＋宮殿三間。不含嘉年華舞會。</p>
+      <p>商務艙拆票＋Freccia Business＋宮殿三間。不含嘉年華舞會。</p>
     </article>
     <article>
       <p class="tag">住宿怎麼分比較便宜</p>

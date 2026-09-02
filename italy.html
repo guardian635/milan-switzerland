@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>J人行程表｜台北 → 米蘭 → 威尼斯嘉年華 → 佛羅倫斯 → 羅馬</title>
-  <meta name="description" content="J 人專用義大利 16 日：2027/2/6 直飛米蘭、威尼斯嘉年華、佛羅倫斯、羅馬、Serravalle Outlet。每段標明租車與否、火車、飯店抵達。" />
+  <title>J人行程表｜台北 → 米蘭進 → 威尼斯嘉年華 → 佛羅倫斯 → 羅馬飛回</title>
+  <meta name="description" content="J 人專用義大利 16 日：2027/2/6 長榮直飛米蘭、威尼斯嘉年華、佛羅倫斯、羅馬華航飛回。每段標明租車與否、火車、飯店抵達。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
@@ -18,7 +18,7 @@
       <span class="mark">J</span>
       <div>
         <p class="eyebrow">16-DAY DOSSIER · 2027.02.06 · CET 冬天時區</p>
-        <h1>台北直飛米蘭，義大利四城，再回台灣</h1>
+        <h1>台北飛米蘭進，羅馬飛回台灣</h1>
       </div>
     </div>
     <nav class="topnav">
@@ -40,15 +40,15 @@
       <figcaption>真實照片來源：Wikimedia Commons</figcaption>
     </figure>
     <div class="hero-copy">
-      <p class="kicker">2027.02.06 出發 · 嘉年華尾聲 · EVA BR95／BR96 · 含 Serravalle</p>
+      <p class="kicker">2027.02.06 出發 · 嘉年華尾聲 · 開腳 BR95 進／CI76 出</p>
       <h2>給把時間寫進行事曆的人。</h2>
-      <p class="lede">這是<strong>獨立的義大利行程</strong>，不是 1/30 瑞士線的續集。出發鎖定 <strong>2027 年 2 月 6 日（六）大年夜夜航</strong>。米蘭直飛當進出門：當天把人送到威尼斯趕嘉年華 2/7–9，再佛羅倫斯、羅馬，回米蘭 overnight 後 2/21 起飛。</p>
+      <p class="lede">這是<strong>獨立的義大利行程</strong>，不是 1/30 瑞士線的續集。出發鎖定 <strong>2027 年 2 月 6 日（六）大年夜</strong>長榮 BR95 進米蘭。當天火車去威尼斯趕嘉年華 2/7–9，再佛羅倫斯、羅馬住 7 晚，<strong>2/21 從 FCO 華航飛回</strong>。不住米蘭、不北上。</p>
       <div class="hero-controls">
         <label>
           第 1 天出發日（已固定）
           <input type="date" id="start-date" value="2027-02-06" readonly />
         </label>
-        <p class="hint">冬天班表：TPE 23:10 → MXP 06:50+1；回程 2/21 MXP 11:00 → TPE 2/22 06:10。時刻全部當地時間。CET＝台灣 −7。</p>
+        <p class="hint">去程冬天班表：TPE 23:10 → MXP 06:50+1。回程預設 CI76 2/21 11:00 FCO → TPE 05:45+1。華航羅馬線不是每天飛，訂前核對。時刻當地時間。CET＝台灣 −7。</p>
       </div>
       <dl class="stats" id="stats"></dl>
     </div>
@@ -63,7 +63,7 @@
   <section class="route" id="route">
     <h2>路線一覽</h2>
     <ol class="route-line" id="route-line"></ol>
-    <svg class="route-svg" viewBox="0 0 900 220" role="img" aria-label="台北到米蘭到威尼斯佛羅倫斯羅馬再回米蘭的路線示意">
+    <svg class="route-svg" viewBox="0 0 900 220" role="img" aria-label="台北到米蘭進、威尼斯佛羅倫斯羅馬、羅馬飛回台北的路線示意">
       <defs>
         <linearGradient id="track" x1="0" x2="1">
           <stop offset="0" stop-color="#c45c26" />
@@ -78,7 +78,7 @@
         <circle cx="470" cy="168" r="7" fill="#8a3b2a" /><text x="470" y="198" text-anchor="middle">威尼斯</text>
         <circle cx="620" cy="95" r="7" fill="#8a3b2a" /><text x="620" y="78" text-anchor="middle">佛羅倫斯</text>
         <circle cx="740" cy="55" r="7" fill="#8a3b2a" /><text x="740" y="38" text-anchor="middle">羅馬</text>
-        <circle cx="860" cy="80" r="7" fill="#c45c26" /><text x="860" y="108" text-anchor="middle">回米蘭</text>
+        <circle cx="860" cy="80" r="7" fill="#c45c26" /><text x="860" y="108" text-anchor="middle">FCO 飛回</text>
       </g>
     </svg>
   </section>
@@ -87,11 +87,11 @@
     <div class="verdict-card">
       <p class="kicker">J 人交通裁決</p>
       <h2>全程不租車。</h2>
-      <p>威尼斯沒車。米蘭／佛羅倫斯／羅馬都有 <strong>ZTL</strong>。六人冬裝行李走 <strong>Frecciarossa 四段</strong>，比開進歷史中心拿罰單準。米蘭直飛不要把米蘭當第四座「黃金城」再住一輪——它是進出門。</p>
+      <p>威尼斯沒車。佛羅倫斯／羅馬有 <strong>ZTL</strong>。六人冬裝行李走 <strong>Frecciarossa 三段</strong>，羅馬 Leonardo Express 出機場。米蘭只當進門，<strong>不住、不飛回</strong>——少搬一次家，羅馬多兩晚。</p>
       <ul class="verdict-list">
         <li><span>抵達日</span>MXP 06:50 → Express → Centrale → Freccia 威尼斯。不要 2/7 先睡米蘭，嘉年華只剩 2/7–9。</li>
-        <li><span>四段 Freccia</span>點對點 Super Economy，不要買連續通票。Standard 對號即可。</li>
-        <li><span>Outlet</span>Serravalle 坐官方接駁。回程時刻寫死。不要為了 outlet 租車。</li>
+        <li><span>三段 Freccia</span>米蘭→威尼斯、威尼斯→佛羅倫斯、佛羅倫斯→羅馬。點對點 Super Economy。沒有羅馬→米蘭。</li>
+        <li><span>回程</span>華航 CI76 預設 2/21 11:00 FCO。羅馬線不是每天飛，先對班表。Outlet 改 Castel Romano，不是 Serravalle。</li>
       </ul>
     </div>
     <aside class="compare">
@@ -118,14 +118,14 @@
 
   <section class="tickets" id="tickets">
     <h2>必須提前買票 · 有高級艙的會標出來</h2>
-    <p>機票以外，<strong>現在真正該訂的是威尼斯包棟</strong>，以及長榮大年夜位子。梵蒂岡不要訂 2/11、不要訂 2/14。紅色＝不買上不了；深色金框＝建議升級。</p>
+    <p>機票以外，<strong>現在真正該訂的是威尼斯包棟</strong>、長榮 BR95，以及華航 CI76 有沒有 2/21。梵蒂岡不要訂 2/11、2/14、2/21。紅色＝不買上不了；深色金框＝建議升級。</p>
     <div class="ticket-grid" id="ticket-list"></div>
   </section>
 
   <section class="hotels" id="hotels">
     <h2>住宿：包棟分擔 vs 飯店三間 vs 必住</h2>
     <p>人數 <strong>4 大 2 小</strong>。六人開三間雙人房通常比 <strong>包棟／整套公寓</strong> 貴一截，還不能自己做早餐。超豪 palazzo 三間總統套房不要看，那是另一個預算。</p>
-    <p><strong>按鈕會用你們的入住日、4 成人 2 小孩打開 Booking 整套房或 Airbnb。</strong> 威尼斯嘉年華最短入住常見，三晚剛好。米蘭只住兩晚，優先 Centrale 走路 8 分，因為 2/21 06:30 出門。</p>
+    <p><strong>按鈕會用你們的入住日、4 成人 2 小孩打開 Booking 整套房或 Airbnb。</strong> 威尼斯嘉年華最短入住常見，三晚剛好。羅馬 7 晚，優先地鐵能到 Termini（2/21 Leonardo Express）。不住米蘭。</p>
     <p class="fine">參考價為 2026-08 冬季／嘉年華行情（整套／晚，含典型清潔費攤提）。匯率 EUR 1＝NT$36。小孩假設 6–15 歲。</p>
     <div id="hotel-list"></div>
   </section>
@@ -137,7 +137,7 @@
       <article class="season-card">
         <p class="tag">每天預設三段</p>
         <h3>18:00　aperitivo</h3>
-        <p>Spritz 或氣泡水＋小食。威尼斯 Cannaregio、佛羅倫斯 Santo Spirito、羅馬 Trastevere、米蘭 Navigli。這是正餐前的坐，不是喝醉。</p>
+        <p>Spritz 或氣泡水＋小食。威尼斯 Cannaregio、佛羅倫斯 Santo Spirito、羅馬 Trastevere。這是正餐前的坐，不是喝醉。</p>
       </article>
       <article class="season-card">
         <p class="tag">19:30–21:00</p>
@@ -147,7 +147,7 @@
       <article class="season-card">
         <p class="tag">21:00–21:30</p>
         <h3>燈光夜走，然後回</h3>
-        <p>威尼斯聖馬可、佛羅倫斯舊橋、羅馬競技場外牆／特雷維、米蘭迴廊。免費、不用門票。隔天有 8 點館，就不要再加第二個夜區。</p>
+        <p>威尼斯聖馬可、佛羅倫斯舊橋、羅馬競技場外牆／特雷維。免費、不用門票。隔天有 8 點館，就不要再加第二個夜區。</p>
       </article>
       <article class="season-card">
         <p class="tag">晚上不要排</p>
@@ -159,7 +159,7 @@
 
   <section class="tickets" id="shop">
     <h2>逛街與 Outlet：每天有走走，Outlet 要整天</h2>
-    <p>上一版骨架偏博物館。這份把逛街寫進日程。Outlet 不能跟最後的晚餐、2/21 早班塞同一天。</p>
+    <p>逛街寫進日程。開腳之後不住米蘭，Serravalle 刪掉。要折扣精品改 2/20 羅馬南郊 Castel Romano，或乾脆市區走。</p>
     <div class="season-grid">
       <article class="season-card">
         <p class="tag">2/8 威尼斯</p>
@@ -177,26 +177,26 @@
         <p>櫥窗在 Condotti，能買的在 Corso。下午特雷維、萬神殿路過。Porta Portese 是週日早上，2/14 剛搬完、2/21 在機場，兩頭都不去。</p>
       </article>
       <article class="season-card">
-        <p class="tag">2/19 傍晚米蘭</p>
-        <h3>迴廊＋Montenapoleone 金四角</h3>
-        <p>最後的晚餐之後走 Galleria、Via della Spiga、Montenapoleone。90 分鐘櫥窗，不是折扣場。</p>
+        <p class="tag">2/19 羅馬</p>
+        <h3>猶太區／河岸，不是金四角</h3>
+        <p>人在羅馬。聖天使堡、Ghetto、台伯河。米蘭迴廊這次不走。</p>
       </article>
       <article class="season-card">
-        <p class="tag">2/20 週六專日</p>
-        <h3>Serravalle Designer Outlet</h3>
-        <p>歐洲最大之一，戶外村約 230 店，10:00–20:00。Centrale 9:00／9:30 接駁，回程票面寫死。成人約 €25。週六人最多，但是唯一完整米蘭日。隔天早飛：大袋當天收進託運，現場做 Global Blue。</p>
+        <p class="tag">2/20 週六選配</p>
+        <h3>Castel Romano Outlet</h3>
+        <p>羅馬南郊 McArthurGlen，接駁約 40–50 分。不是 Serravalle。戶外村，週六人多。隔天 FCO 早飛：大袋當天收進託運，現場做 Global Blue。</p>
       </article>
       <article class="season-card">
         <p class="tag">不想去 Outlet</p>
-        <h3>Fidenza 或不出城</h3>
-        <p>Fidenza Village：Piazza Repubblica 9:45 去、17:00 回，成人約 €10，較早收工。或 2/20 改 Corso Buenos Aires／Rinascente。不要去瑞士 FoxTown。</p>
+        <h3>2/20 市區放空</h3>
+        <p>Testaccio 市場、補買、小孩睡覺。不要為了 Serravalle 再北上米蘭。</p>
       </article>
     </div>
   </section>
 
   <section class="luggage" id="luggage">
     <h2>冬天行李：義大利沒有瑞士那種後天取件</h2>
-    <p>四大兩小、換 <strong>4 次住宿</strong>、威尼斯還要抬箱過橋。<strong>不要帶 6 顆硬殼大箱。</strong> Trenitalia 沒有 SBB 那種車站到車站、後天取的服務。私人行李運送可以找，但這趟每站住得夠長，重點是減箱＋轉場叫車。</p>
+    <p>四大兩小、換 <strong>3 次住宿</strong>、威尼斯還要抬箱過橋。<strong>不要帶 6 顆硬殼大箱。</strong> Trenitalia 沒有 SBB 那種車站到車站、後天取的服務。開腳少搬一次，羅馬連住 7 晚。</p>
 
     <div class="season-grid">
       <article class="season-card">
@@ -217,7 +217,7 @@
       <article class="season-card">
         <p class="tag">Outlet 翌日早飛</p>
         <h3>2/20 買的東西當晚進託運</h3>
-        <p>手提會爆。退稅在 Serravalle 做完。不要指望 2/21 馬爾彭薩再排退稅。</p>
+        <p>手提會爆。退稅在 Castel Romano 做完。不要指望 2/21 FCO 再排退稅。</p>
       </article>
     </div>
 
@@ -231,8 +231,8 @@
           <tr><td>2/7</td><td>MXP → 威尼斯</td><td>跟人走 Express＋Freccia。S. Lucia 出站 vaporetto，不要抬過三座橋。</td></tr>
           <tr><td>2/10</td><td>威尼斯 → 佛羅倫斯</td><td>跟人上車。SMN 出站短程計程車去 Oltrarno（可進 ZTL）。</td></tr>
           <tr><td>2/14</td><td>佛羅倫斯 → 羅馬</td><td>跟人上車。Termini 出站叫車，不要走石板路。</td></tr>
-          <tr class="hi"><td><strong>2/19</strong></td><td><strong>羅馬 → 米蘭</strong></td><td>跟人走 Freccia 到 Centrale，步行 8 分內進公寓。這晚要睡得近，因為 2/21 早飛。</td></tr>
-          <tr><td>2/20</td><td>Serravalle</td><td>大箱留公寓。Outlet 袋當晚塞進託運。</td></tr>
+          <tr class="hi"><td><strong>2/21</strong></td><td><strong>羅馬 → FCO</strong></td><td>大箱跟人走 Leonardo Express。公寓要能 07:10 前到 Termini。</td></tr>
+          <tr><td>2/20</td><td>Castel Romano（選）</td><td>大箱留公寓。Outlet 袋當晚塞進託運。</td></tr>
         </tbody>
       </table>
     </div>
@@ -241,7 +241,7 @@
 
   <section class="budget" id="budget">
     <h2>預算估算：全部普通 vs 全部最高等</h2>
-    <p>以 <strong>4 成人＋2 小孩</strong> 計算。普通住宿＝每站包一棟／一整套；最高等住宿＝必住飯店開三間。不含 Outlet 購物。小孩機票先按成人的 75% 估。2/6 大年夜機票比淡季貴。</p>
+    <p>以 <strong>4 成人＋2 小孩</strong> 計算。普通住宿＝每站包一棟／一整套；最高等住宿＝必住飯店開三間。不含 Outlet 購物。小孩機票先按成人的 75% 估。開腳拆票，2/6 大年夜去程比淡季貴。</p>
     <div class="budget-summary" id="budget-summary"></div>
     <div class="budget-table-wrap">
       <table class="budget-table">
@@ -278,7 +278,7 @@
   </section>
 
   <footer class="site-foot">
-    <p>時刻為規劃用，非即時班表。冬天長榮：TPE 23:10 → MXP 06:50+1；MXP 11:00 → TPE 06:10+1（約 2026/10/25–2027/3/26）。請在購票後覆核。這頁與瑞士 1/30 行程互相獨立。</p>
+    <p>時刻為規劃用，非即時班表。去程長榮 BR95：TPE 23:10 → MXP 06:50+1。回程預設華航 CI76：FCO 11:00 → TPE 05:45+1；羅馬線不是每天飛，以官網為準。這頁與瑞士 1/30 行程互相獨立。</p>
   </footer>
 
   <div class="lightbox" id="lightbox" hidden>
