@@ -169,5 +169,23 @@
     "credit": "https://images.trvl-media.com/place/6200119/71756960-cfe1-44f4-a71d-5208eaf36a3d.jpg",
     "commons": "https://images.trvl-media.com/place/6200119/71756960-cfe1-44f4-a71d-5208eaf36a3d.jpg",
     "bytes": 1154713
+  },
+  {
+    "file": "italy/civita.jpg",
+    "title": "Civita di Bagnoregio.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/37996589600@N01\">rdesai</a>",
+    "license": "CC BY 2.0",
+    "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/\">Flickr.com</a> - <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/37996589600@N01/2808944\">image description page</a>",
+    "commons": "https://commons.wikimedia.org/wiki/File:Civita_di_Bagnoregio.jpg",
+    "bytes": 115202
+  },
+  {
+    "file": "italy/naples.jpg",
+    "title": "Golfo di Napoli vista di Vesuvio (33366684084).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/50312443@N04\">Robert Anders</a> from Hamburg, Germany",
+    "license": "CC BY 2.0",
+    "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/schwarzbrot/33366684084/\">FUJICHROME Sensia 100</a>",
+    "commons": "https://commons.wikimedia.org/wiki/File:Golfo_di_Napoli_vista_di_Vesuvio_%2833366684084%29.jpg",
+    "bytes": 1132509
   }
 ]
