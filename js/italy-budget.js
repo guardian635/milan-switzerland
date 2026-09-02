@@ -57,7 +57,7 @@ const STAYS = [
     why: "D2–D6　梵蒂岡 2/8、競技場、天空之城 2/10、龐貝 2/11",
     apt: {
       name: "Prati 或 metro A 整套（6 人、3 房）",
-      note: "落地 Leonardo Express 到 Termini。2/12 轉佛羅倫斯，住太深的 Trastevere 搬箱會痛。",
+      note: "落地 Leonardo Express 到 Termini。2/12 轉佛羅倫斯，住太深的 Trastevere 搬箱會痛。問清：瞬熱熱水或 boiler 公升數、暖氣時段、電梯是否先走半層。",
       night: 390, cur: "EUR",
       search: "Rome Prati",
     },
@@ -83,7 +83,7 @@ const STAYS = [
     why: "D7–D9　烏菲茲／大衛／工坊。錫耶納刪掉。",
     apt: {
       name: "Oltrarno 或 SMN 步行 10 分整套（6 人、3 房）",
-      note: "有廚房。Oltrarno 過河叫計程車（可進 ZTL）。",
+      note: "有廚房。Oltrarno 過河叫計程車（可進 ZTL）。同樣問熱水、暖氣、電梯。",
       night: 340, cur: "EUR",
       search: "Florence Oltrarno",
     },
@@ -109,7 +109,7 @@ const STAYS = [
     why: "D10–D12　嘉年華後的水城",
     apt: {
       name: "運河整套公寓（3 房／6 人）",
-      note: "嘉年華已過，較好訂。vaporetto 站 5 分內、盡量有電梯。",
+      note: "嘉年華已過，較好訂。最近碼頭 5 分內（進出用水上計程車）、盡量有電梯且不要先走半層。問熱水 boiler 與暖氣時段，帶小孩冬天很關鍵。",
       night: 380, cur: "EUR",
       search: "Venice Cannaregio",
     },
@@ -135,7 +135,7 @@ const STAYS = [
     why: "D13–D15　金四角、最後的晚餐、Serravalle、2/21 早飛",
     apt: {
       name: "杜奧莫／Montenapoleone 整套（3 房／6 人）",
-      note: "最後才逛街，袋子隔天托運。2/21 早飛，地鐵 M3 去 Centrale。不要訂太靠 Navigli。",
+      note: "最後才逛街，袋子隔天托運。2/21 07:00 van 樓下接去 MXP，要能停車的門牌、少階梯。不要訂太靠 Navigli。",
       night: 360, cur: "EUR",
       search: "Milan Duomo",
     },
@@ -187,15 +187,21 @@ const BUDGET_ROWS = [
   },
   {
     group: "義大利交通",
-    name: "天空之城　火車＋預叫 van／兩台計程車",
-    std: { twd: twd(9 * 6 * 2 + 5 * 6 + 180, "EUR"), note: "Termini⇄Orvieto Regionale 約 €9／人來回。Civita 門票約 €5。六人 van 往返估 €180。冬天不要賭 Cotral。" },
-    high: { twd: twd(9 * 6 * 2 + 5 * 6 + 320, "EUR"), note: "羅馬私人車直送來回。" },
+    name: "天空之城　羅馬包車 van 一日",
+    std: { twd: twd(420 + 5 * 6, "EUR"), note: "7–8 人座一日約 €400–450。公寓樓下上車，直達吊橋停車場。回程可停奧爾維耶托大教堂外觀。門票約 €5。" },
+    high: { twd: twd(550 + 5 * 6, "EUR"), note: "含中英司機＋等待。" },
   },
   {
     group: "義大利交通",
-    name: "機場快線、vaporetto、羅馬地鐵、Outlet 接駁",
-    std: { twd: twd(15 * 6 + 14 * 6 + 45 * 6 + 25 * 6 + 25 * 4 + 10 * 2, "EUR"), note: "Malpensa Express、Leonardo Express、威尼斯 3 日卡、羅馬 72h、Serravalle 接駁。" },
-    high: { twd: twd(110 + 50 * 2 + 45 * 6 + 40 * 6 + 120, "EUR"), note: "MXP 計程車＋FCO 定價車＋vaporetto＋私人車去 Outlet" },
+    name: "威尼斯進出水上計程車（帶大箱）",
+    std: { twd: twd(130 * 2, "EUR"), note: "2/15 進、2/18 出。6 人＋四箱一艘，估 €130／趟。島上觀光仍用 vaporetto 3 日卡。" },
+    high: { twd: twd(180 * 2, "EUR"), note: "指定碼頭、私人船。" },
+  },
+  {
+    group: "義大利交通",
+    name: "Leonardo Express、vaporetto 3 日、羅馬地鐵、Outlet 接駁、MXP 包車",
+    std: { twd: twd(14 * 6 + 45 * 6 + 25 * 6 + 25 * 4 + 10 * 2 + 130, "EUR"), note: "進羅馬仍坐 Leonardo Express。2/21 杜奧莫 van 直送 MXP T1 估 €130。不出 Centrale 擠地鐵。" },
+    high: { twd: twd(50 * 2 + 45 * 6 + 40 * 6 + 180 + 160, "EUR"), note: "FCO 定價車＋Outlet 私人車＋MXP 賓士 van" },
   },
   {
     group: "門票",
@@ -217,9 +223,9 @@ const BUDGET_ROWS = [
   },
   {
     group: "門票",
-    name: "龐貝遺址＋Campania Express／計程車",
-    std: { twd: twd(18 * 4 + 15 * 6 * 2 + 50, "EUR"), note: "官方 pompeiisites.org。成人約 €18，歐盟未滿 18 常免費仍要預約。Campania Express 或六人計程車去遺址。" },
-    high: { twd: twd(55 * 6 + 180, "EUR"), note: "導覽＋私人車拿坡里⇄遺址。" },
+    name: "龐貝遺址＋拿坡里⇄遺址包車",
+    std: { twd: twd(18 * 4 + 120, "EUR"), note: "官方 pompeiisites.org。成人約 €18，歐盟未滿 18 常免費仍要預約。Napoli Centrale 預叫 van／兩台計程車，不要 Circumvesuviana。" },
+    high: { twd: twd(55 * 6 + 180, "EUR"), note: "導覽＋司機在入口等。" },
   },
   {
     group: "門票",
