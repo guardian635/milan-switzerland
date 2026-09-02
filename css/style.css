@@ -66,9 +66,31 @@ a { color: var(--alpine); }
   font-size: 16px;
   font-weight: 700;
 }
-.topnav { display: flex; gap: 18px; font-size: 14px; }
+.topnav { display: flex; gap: 18px; font-size: 14px; align-items: center; flex-wrap: wrap; }
 .topnav a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
 .topnav a:hover { border-bottom-color: var(--ink); }
+.trip-switch {
+  display: flex;
+  gap: 0;
+  margin-right: 8px;
+  border: 1px solid var(--ink);
+}
+.trip-switch a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  border-bottom: 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+.trip-switch a + a { border-left: 1px solid var(--ink); }
+.trip-switch a.on,
+.trip-switch a:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 0;
+}
 
 .hero {
   display: grid;
@@ -485,7 +507,7 @@ h2 {
     grid-template-columns: 1fr;
   }
   .hero-media img { height: 42vh; }
-  .hero-copy, .route, .verdict, .days, .bookings, .checklist, .credits, .site-foot, .tickets, .season, .luggage {
+  .hero-copy, .route, .verdict, .days, .bookings, .checklist, .credits, .site-foot, .tickets, .season, .luggage, .hotels, .budget {
     padding-left: 16px; padding-right: 16px;
   }
   .ticket-grid { grid-template-columns: 1fr; }

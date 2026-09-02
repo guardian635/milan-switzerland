@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>J人行程表｜台北 → 米蘭 → 威尼斯嘉年華 → 佛羅倫斯 → 羅馬</title>
+  <meta name="description" content="J 人專用義大利 16 日：2027/2/6 直飛米蘭、威尼斯嘉年華、佛羅倫斯、羅馬、Serravalle Outlet。每段標明租車與否、火車、飯店抵達。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#days">跳到每日行程</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">J</span>
+      <div>
+        <p class="eyebrow">16-DAY DOSSIER · 2027.02.06 · CET 冬天時區</p>
+        <h1>台北直飛米蘭，義大利四城，再回台灣</h1>
+      </div>
+    </div>
+    <nav class="topnav">
+      <div class="trip-switch" aria-label="行程切換">
+        <a href="index.html">瑞士 1/30</a>
+        <a class="on" href="italy.html">義大利 2/6</a>
+      </div>
+      <a href="#tickets">艙等／早鳥</a>
+      <a href="#hotels">住宿／必住</a>
+      <a href="#shop">逛街／Outlet</a>
+      <a href="#budget">預算</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <figure class="hero-media">
+      <img id="hero-img" src="photos/italy/venice-sanmarco.jpg" alt="威尼斯聖馬可廣場" />
+      <figcaption>真實照片來源：Wikimedia Commons</figcaption>
+    </figure>
+    <div class="hero-copy">
+      <p class="kicker">2027.02.06 出發 · 嘉年華尾聲 · EVA BR95／BR96 · 含 Serravalle</p>
+      <h2>給把時間寫進行事曆的人。</h2>
+      <p class="lede">這是<strong>獨立的義大利行程</strong>，不是 1/30 瑞士線的續集。出發鎖定 <strong>2027 年 2 月 6 日（六）大年夜夜航</strong>。米蘭直飛當進出門：當天把人送到威尼斯趕嘉年華 2/7–9，再佛羅倫斯、羅馬，回米蘭 overnight 後 2/21 起飛。</p>
+      <div class="hero-controls">
+        <label>
+          第 1 天出發日（已固定）
+          <input type="date" id="start-date" value="2027-02-06" readonly />
+        </label>
+        <p class="hint">冬天班表：TPE 23:10 → MXP 06:50+1；回程 2/21 MXP 11:00 → TPE 2/22 06:10。時刻全部當地時間。CET＝台灣 −7。</p>
+      </div>
+      <dl class="stats" id="stats"></dl>
+    </div>
+  </section>
+
+  <section class="season" id="season">
+    <h2>2/6 出發，你會看到什麼</h2>
+    <p class="lede">答案：<strong>冬天城市＋威尼斯嘉年華尾聲</strong>。不是夏天的托斯卡尼麥田，也不是阿瑪菲海岸。博物館、廣場、工坊、Outlet 才開；五漁村不要加。</p>
+    <div class="season-grid" id="season-grid"></div>
+  </section>
+
+  <section class="route" id="route">
+    <h2>路線一覽</h2>
+    <ol class="route-line" id="route-line"></ol>
+    <svg class="route-svg" viewBox="0 0 900 220" role="img" aria-label="台北到米蘭到威尼斯佛羅倫斯羅馬再回米蘭的路線示意">
+      <defs>
+        <linearGradient id="track" x1="0" x2="1">
+          <stop offset="0" stop-color="#c45c26" />
+          <stop offset="0.4" stop-color="#1a1f2e" />
+          <stop offset="1" stop-color="#8a3b2a" />
+        </linearGradient>
+      </defs>
+      <path d="M40 150 C 140 50, 240 40, 330 100 S 470 200, 560 120 S 700 40, 860 80" fill="none" stroke="url(#track)" stroke-width="4" />
+      <g font-family="Noto Sans TC, sans-serif" font-size="13" fill="#1a1f2e">
+        <circle cx="40" cy="150" r="7" fill="#c45c26" /><text x="40" y="178" text-anchor="middle">台北 TPE</text>
+        <circle cx="330" cy="100" r="7" fill="#1a1f2e" /><text x="330" y="82" text-anchor="middle">米蘭 MXP</text>
+        <circle cx="470" cy="168" r="7" fill="#8a3b2a" /><text x="470" y="198" text-anchor="middle">威尼斯</text>
+        <circle cx="620" cy="95" r="7" fill="#8a3b2a" /><text x="620" y="78" text-anchor="middle">佛羅倫斯</text>
+        <circle cx="740" cy="55" r="7" fill="#8a3b2a" /><text x="740" y="38" text-anchor="middle">羅馬</text>
+        <circle cx="860" cy="80" r="7" fill="#c45c26" /><text x="860" y="108" text-anchor="middle">回米蘭</text>
+      </g>
+    </svg>
+  </section>
+
+  <section class="verdict" id="verdict">
+    <div class="verdict-card">
+      <p class="kicker">J 人交通裁決</p>
+      <h2>全程不租車。</h2>
+      <p>威尼斯沒車。米蘭／佛羅倫斯／羅馬都有 <strong>ZTL</strong>。六人冬裝行李走 <strong>Frecciarossa 四段</strong>，比開進歷史中心拿罰單準。米蘭直飛不要把米蘭當第四座「黃金城」再住一輪——它是進出門。</p>
+      <ul class="verdict-list">
+        <li><span>抵達日</span>MXP 06:50 → Express → Centrale → Freccia 威尼斯。不要 2/7 先睡米蘭，嘉年華只剩 2/7–9。</li>
+        <li><span>四段 Freccia</span>點對點 Super Economy，不要買連續通票。Standard 對號即可。</li>
+        <li><span>Outlet</span>Serravalle 坐官方接駁。回程時刻寫死。不要為了 outlet 租車。</li>
+      </ul>
+    </div>
+    <aside class="compare">
+      <h3>轉場時間對照</h3>
+      <table>
+        <thead>
+          <tr><th>路段</th><th>火車／大眾運輸</th><th>若租車</th></tr>
+        </thead>
+        <tbody id="compare-body"></tbody>
+      </table>
+      <p class="fine">車程為一般路況估算，不含找停車。火車為常見班次，出發前以 Trenitalia／Italo App 為準。</p>
+    </aside>
+  </section>
+
+  <nav class="day-rail" id="day-rail" aria-label="16 日快速跳轉"></nav>
+
+  <section class="days" id="days">
+    <div class="days-head">
+      <h2>16 日時間表</h2>
+      <p>點開每一天看景點照片、時刻、租車裁決、飯店抵達。時刻已含緩衝，不要再砍。D1 是桃園夜航，地面 14 晚。</p>
+    </div>
+    <div id="day-list"></div>
+  </section>
+
+  <section class="tickets" id="tickets">
+    <h2>必須提前買票 · 有高級艙的會標出來</h2>
+    <p>機票以外，<strong>現在真正該訂的是威尼斯包棟</strong>，以及長榮大年夜位子。梵蒂岡不要訂 2/11、不要訂 2/14。紅色＝不買上不了；深色金框＝建議升級。</p>
+    <div class="ticket-grid" id="ticket-list"></div>
+  </section>
+
+  <section class="hotels" id="hotels">
+    <h2>住宿：包棟分擔 vs 飯店三間 vs 必住</h2>
+    <p>人數 <strong>4 大 2 小</strong>。六人開三間雙人房通常比 <strong>包棟／整套公寓</strong> 貴一截，還不能自己做早餐。超豪 palazzo 三間總統套房不要看，那是另一個預算。</p>
+    <p><strong>按鈕會用你們的入住日、4 成人 2 小孩打開 Booking 整套房或 Airbnb。</strong> 威尼斯嘉年華最短入住常見，三晚剛好。米蘭只住兩晚，優先 Centrale 走路 8 分，因為 2/21 06:30 出門。</p>
+    <p class="fine">參考價為 2026-08 冬季／嘉年華行情（整套／晚，含典型清潔費攤提）。匯率 EUR 1＝NT$36。小孩假設 6–15 歲。</p>
+    <div id="hotel-list"></div>
+  </section>
+
+  <section class="tickets" id="shop">
+    <h2>逛街與 Outlet：每天有走走，Outlet 要整天</h2>
+    <p>上一版骨架偏博物館。這份把逛街寫進日程。Outlet 不能跟最後的晚餐、2/21 早班塞同一天。</p>
+    <div class="season-grid">
+      <article class="season-card">
+        <p class="tag">2/8 威尼斯</p>
+        <h3>Mercerie → 里亞托</h3>
+        <p>嘉年華平日下午。面具工坊可以進。不要加 Murano 玻璃島——冬天船冷、工廠觀光化。Castello／Cannaregio 比聖馬可好走。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">2/12 佛羅倫斯</p>
+        <h3>Oltrarno 工坊，不是 San Lorenzo 攤</h3>
+        <p>Santo Spirito、Via Maggio、Borgo San Jacopo 的皮件、紙品、金工。Via Tornabuoni 當櫥窗。戶外皮件攤多數不是工坊貨。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">2/17 羅馬</p>
+        <h3>西班牙階梯 → Condotti → Corso</h3>
+        <p>櫥窗在 Condotti，能買的在 Corso。下午特雷維、萬神殿路過。Porta Portese 是週日早上，2/14 剛搬完、2/21 在機場，兩頭都不去。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">2/19 傍晚米蘭</p>
+        <h3>迴廊＋Montenapoleone 金四角</h3>
+        <p>最後的晚餐之後走 Galleria、Via della Spiga、Montenapoleone。90 分鐘櫥窗，不是折扣場。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">2/20 週六專日</p>
+        <h3>Serravalle Designer Outlet</h3>
+        <p>歐洲最大之一，戶外村約 230 店，10:00–20:00。Centrale 9:00／9:30 接駁，回程票面寫死。成人約 €25。週六人最多，但是唯一完整米蘭日。隔天早飛：大袋當天收進託運，現場做 Global Blue。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">不想去 Outlet</p>
+        <h3>Fidenza 或不出城</h3>
+        <p>Fidenza Village：Piazza Repubblica 9:45 去、17:00 回，成人約 €10，較早收工。或 2/20 改 Corso Buenos Aires／Rinascente。不要去瑞士 FoxTown。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="luggage" id="luggage">
+    <h2>冬天行李：義大利沒有瑞士那種後天取件</h2>
+    <p>四大兩小、換 <strong>4 次住宿</strong>、威尼斯還要抬箱過橋。<strong>不要帶 6 顆硬殼大箱。</strong> Trenitalia 沒有 SBB 那種車站到車站、後天取的服務。私人行李運送可以找，但這趟每站住得夠長，重點是減箱＋轉場叫車。</p>
+
+    <div class="season-grid">
+      <article class="season-card">
+        <p class="tag">先減箱</p>
+        <h3>6 人最多 4 顆大箱</h3>
+        <p>大人共 3–4 顆中大型箱＋每人一個背包。小孩只背小包。威尼斯石橋＋階梯，四輪硬殼比兩輪軟箱更難抬。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">最痛的兩天</p>
+        <h3>2/7 進威尼斯、2/10 出威尼斯</h3>
+        <p>S. Lucia 出站還要 vaporetto。公寓若要過三座橋、沒電梯，最後 300 公尺是災難。訂房硬條件：vaporetto 站步行 5 分、盡量有電梯。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">火車行李架</p>
+        <h3>Freccia 有架，仍要自己搬</h3>
+        <p>Standard 車廂兩端有行李區。六人對號盡量同一車。不要指望列車員搬。羅馬 Termini 出站叫計程車去公寓，不要石板路拖 25 分。</p>
+      </article>
+      <article class="season-card">
+        <p class="tag">Outlet 翌日早飛</p>
+        <h3>2/20 買的東西當晚進託運</h3>
+        <p>手提會爆。退稅在 Serravalle 做完。不要指望 2/21 馬爾彭薩再排退稅。</p>
+      </article>
+    </div>
+
+    <h3 class="subhead">這趟建議怎麼搬</h3>
+    <div class="budget-table-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr><th>日</th><th>路段</th><th>大箱怎麼辦</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2/7</td><td>MXP → 威尼斯</td><td>跟人走 Express＋Freccia。S. Lucia 出站 vaporetto，不要抬過三座橋。</td></tr>
+          <tr><td>2/10</td><td>威尼斯 → 佛羅倫斯</td><td>跟人上車。SMN 出站短程計程車去 Oltrarno（可進 ZTL）。</td></tr>
+          <tr><td>2/14</td><td>佛羅倫斯 → 羅馬</td><td>跟人上車。Termini 出站叫車，不要走石板路。</td></tr>
+          <tr class="hi"><td><strong>2/19</strong></td><td><strong>羅馬 → 米蘭</strong></td><td>跟人走 Freccia 到 Centrale，步行 8 分內進公寓。這晚要睡得近，因為 2/21 早飛。</td></tr>
+          <tr><td>2/20</td><td>Serravalle</td><td>大箱留公寓。Outlet 袋當晚塞進託運。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">義大利段沒有瑞士 SBB 行李寄送。真的搬不動再找 Carryon／Luggage Forward 這類私人服務，出發前核對取件日——短住不要寄「後天到」。</p>
+  </section>
+
+  <section class="budget" id="budget">
+    <h2>預算估算：全部普通 vs 全部最高等</h2>
+    <p>以 <strong>4 成人＋2 小孩</strong> 計算。普通住宿＝每站包一棟／一整套；最高等住宿＝必住飯店開三間。不含 Outlet 購物。小孩機票先按成人的 75% 估。2/6 大年夜機票比淡季貴。</p>
+    <div class="budget-summary" id="budget-summary"></div>
+    <div class="budget-table-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>類</th>
+            <th>項目</th>
+            <th>普通</th>
+            <th>全部最高等</th>
+          </tr>
+        </thead>
+        <tbody id="budget-body"></tbody>
+        <tfoot id="budget-foot"></tfoot>
+      </table>
+    </div>
+    <p class="fine">這不是報價單。機票以長榮官網為準；房價以你點進 Booking 當下為準。嘉年華威尼斯與春節機票波動可以到 ±30%。</p>
+  </section>
+
+  <section class="bookings" id="bookings">
+    <h2>出發前時間軸</h2>
+    <ol id="booking-list"></ol>
+  </section>
+
+  <section class="checklist" id="checklist">
+    <h2>J 人出發清單</h2>
+    <p>勾選會存在這台瀏覽器（與瑞士頁分開）。沒勾完就不要出門。</p>
+    <div class="check-grid" id="check-grid"></div>
+  </section>
+
+  <section class="credits" id="credits">
+    <h2>照片來源</h2>
+    <p>景點圖為真實攝影，不是 AI。多數來自 Wikimedia Commons；Via Montenapoleone 為你指定的街道實拍。完整出處見下方。</p>
+    <ul id="credit-list"></ul>
+  </section>
+
+  <footer class="site-foot">
+    <p>時刻為規劃用，非即時班表。冬天長榮：TPE 23:10 → MXP 06:50+1；MXP 11:00 → TPE 06:10+1（約 2026/10/25–2027/3/26）。請在購票後覆核。這頁與瑞士 1/30 行程互相獨立。</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lb-close" aria-label="關閉">×</button>
+    <img alt="" />
+    <p></p>
+  </div>
+
+  <script src="js/italy-budget.js"></script>
+  <script src="js/italy.js"></script>
+</body>
+</html>
