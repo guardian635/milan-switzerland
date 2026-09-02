@@ -49,15 +49,93 @@ function airbnbSearch(place, checkin, checkout) {
 
 const STAYS = [
   {
+    id: "rome",
+    place: "羅馬 Prati／metro A",
+    nights: 4,
+    inn: "2027-02-07",
+    out: "2027-02-11",
+    why: "D2–D5　梵蒂岡 2/8、競技場、逛街",
+    apt: {
+      name: "Prati 或 metro A 整套（6 人、3 房）",
+      note: "落地 Leonardo Express 到 Termini。2/11 轉佛羅倫斯，住太深的 Trastevere 搬箱會痛。",
+      night: 390, cur: "EUR",
+      search: "Rome Prati",
+    },
+    hotel3: {
+      name: "4 星 × 3 間",
+      note: "西班牙階梯一帶三間會很貴。",
+      night: 250, cur: "EUR",
+    },
+    high: {
+      name: "Hassler／Hotel de Russie × 家庭套房",
+      must: true,
+      note: "六人問套房或兩間連通。",
+      night: 1200, cur: "EUR",
+      aptNight: 900, aptCur: "EUR",
+    },
+  },
+  {
+    id: "florence",
+    place: "佛羅倫斯 Oltrarno／SMN",
+    nights: 4,
+    inn: "2027-02-11",
+    out: "2027-02-15",
+    why: "D6–D9　烏菲茲／大衛／工坊",
+    apt: {
+      name: "Oltrarno 或 SMN 步行 10 分整套（6 人、3 房）",
+      note: "有廚房。Oltrarno 過河叫計程車（可進 ZTL）。",
+      night: 340, cur: "EUR",
+      search: "Florence Oltrarno",
+    },
+    hotel3: {
+      name: "4 星 × 3 間",
+      note: "三間加總通常比包棟貴。",
+      night: 210, cur: "EUR",
+    },
+    high: {
+      name: "Portrait Firenze／Hotel Savoy × 家庭套房",
+      must: true,
+      note: "六人問 connecting 或整層。",
+      night: 950, cur: "EUR",
+      aptNight: 780, aptCur: "EUR",
+    },
+  },
+  {
+    id: "venice",
+    place: "威尼斯 Cannaregio／Dorsoduro",
+    nights: 3,
+    inn: "2027-02-15",
+    out: "2027-02-18",
+    why: "D10–D12　嘉年華後的水城",
+    apt: {
+      name: "運河整套公寓（3 房／6 人）",
+      note: "嘉年華已過，較好訂。vaporetto 站 5 分內、盡量有電梯。",
+      night: 380, cur: "EUR",
+      search: "Venice Cannaregio",
+    },
+    hotel3: {
+      name: "4 星 × 3 間",
+      note: "三間通常比包棟貴。",
+      night: 280, cur: "EUR",
+    },
+    high: {
+      name: "Gritti／Danieli 家庭套房或 palazzo 整層",
+      must: true,
+      note: "不要硬開三間總統。",
+      night: 1400, cur: "EUR",
+      aptNight: 1100, aptCur: "EUR",
+    },
+  },
+  {
     id: "milan",
     place: "米蘭 Duomo／金四角",
     nights: 3,
-    inn: "2027-02-09",
-    out: "2027-02-12",
-    why: "D2–D4　金四角、最後的晚餐、Serravalle",
+    inn: "2027-02-18",
+    out: "2027-02-21",
+    why: "D13–D15　金四角、最後的晚餐、Serravalle、2/21 早飛",
     apt: {
       name: "杜奧莫／Montenapoleone 整套（3 房／6 人）",
-      note: "逛街三晚住這裡最省腳。2/12 去 Centrale 上火車，不要訂太靠 Navigli。",
+      note: "最後才逛街，袋子隔天托運。2/21 早飛，地鐵 M3 去 Centrale。不要訂太靠 Navigli。",
       night: 360, cur: "EUR",
       search: "Milan Duomo",
     },
@@ -74,85 +152,8 @@ const STAYS = [
       aptNight: 850, aptCur: "EUR",
     },
   },
-  {
-    id: "venice",
-    place: "威尼斯 Cannaregio／Dorsoduro",
-    nights: 3,
-    inn: "2027-02-12",
-    out: "2027-02-15",
-    why: "D5–D7　嘉年華後的水城",
-    apt: {
-      name: "運河整套公寓（3 房／可住 6 人）",
-      note: "嘉年華已結束，比 2/7 好訂、較不吵。仍要 vaporetto 站 5 分內、盡量有電梯。",
-      night: 380, cur: "EUR",
-      search: "Venice Cannaregio",
-    },
-    hotel3: {
-      name: "4 星飯店 × 3 間",
-      note: "三間雙人房通常比一套公寓貴，還不能自己做早餐。",
-      night: 380, cur: "EUR",
-    },
-    high: {
-      name: "Gritti Palace／Danieli × 3　或　大運河 palazzo 整層",
-      must: true,
-      note: "必住如果衝畫面：Gritti 或 Danieli。六人不要硬開三間總統套房，問家庭套房或 palazzo 整層。",
-      night: 1600, cur: "EUR",
-      aptNight: 1400, aptCur: "EUR",
-    },
-  },
-  {
-    id: "florence",
-    place: "佛羅倫斯 Oltrarno／SMN",
-    nights: 4,
-    inn: "2027-02-15",
-    out: "2027-02-19",
-    why: "D8–D11　烏菲茲／大衛／工坊逛街",
-    apt: {
-      name: "Oltrarno 或 SMN 步行 10 分整套（6 人、3 房）",
-      note: "有廚房可自煮。Oltrarno 晚上較像生活區；拖行李從 SMN 過舊橋要算 20 分＋橋。ZTL，計程車可進。",
-      night: 340, cur: "EUR",
-      search: "Florence Oltrarno",
-    },
-    hotel3: {
-      name: "4 星 × 3 間",
-      note: "SMN 或主教堂附近。三間加總通常仍比包棟貴。",
-      night: 210, cur: "EUR",
-    },
-    high: {
-      name: "Portrait Firenze／Hotel Savoy × 家庭套房",
-      must: true,
-      note: "Portrait 在舊橋旁。六人問 connecting 或整層，不要拆三棟。",
-      night: 950, cur: "EUR",
-      aptNight: 780, aptCur: "EUR",
-    },
-  },
-  {
-    id: "rome",
-    place: "羅馬 Prati／特拉斯提弗列",
-    nights: 5,
-    inn: "2027-02-19",
-    out: "2027-02-24",
-    why: "D12–D16　梵蒂岡 2/20、競技場、2/24 FCO",
-    apt: {
-      name: "Prati 或 Termini 地鐵 15 分內整套（6 人、3 房）",
-      note: "Prati 走梵蒂岡近。2/24 要去 Termini 搭 Leonardo Express。英國 half-term 前半段較擠。",
-      night: 390, cur: "EUR",
-      search: "Rome Prati",
-    },
-    hotel3: {
-      name: "4 星 × 3 間",
-      note: "西班牙階梯／萬神殿一帶三間會很貴。",
-      night: 250, cur: "EUR",
-    },
-    high: {
-      name: "Hassler／Hotel de Russie × 家庭套房",
-      must: true,
-      note: "Hassler 在西班牙階梯頂。六人優先套房或兩間連通，不要三間總統。",
-      night: 1200, cur: "EUR",
-      aptNight: 900, aptCur: "EUR",
-    },
-  },
 ];
+
 
 function aptTotal(stay) {
   return twd(stay.apt.night * stay.nights, stay.apt.cur);
@@ -170,18 +171,18 @@ function highAptTotal(stay) {
 const BUDGET_ROWS = [
   {
     group: "機票",
-    name: "開腳　長榮 BR95 ＋ 華航 CI76　4 成人＋2 兒童（估兒童 75%）",
-    std: { twd: 62000 * 4 + 46500 * 2, note: "兩段單程估。2/8 仍在春節週，但比 2/6 大年夜稍鬆。回程 2/24 週三，CI76 冬天常見有班，仍要核對。" },
-    high: { twd: (153327 + 62664) * 4 + Math.round((153327 + 62664) * 0.75) * 2, note: "用你查過的商務單程當底：米蘭去程 153,327＋羅馬回程約 62,664。2/8–2/24 會變，以官網為準。" },
+    name: "開腳　華航去羅馬 ＋ 長榮回米蘭　4 成人＋2 兒童（估兒童 75%）",
+    std: { twd: 62000 * 4 + 46500 * 2, note: "兩段單程經濟艙估。2/6 大年夜去程仍旺。" },
+    high: { twd: (121636 + 69833) * 4 + Math.round((121636 + 69833) * 0.75) * 2, note: "你查的商務：去程羅馬 121,636＋回程米蘭 1,939.81€（約 69,833）。合計約 191,469／成人。" },
   },
-  { group: "住宿", name: "米蘭 3 晚（金四角／Outlet）", stayId: "milan" },
-  { group: "住宿", name: "威尼斯 3 晚（嘉年華後）", stayId: "venice" },
+  { group: "住宿", name: "羅馬 4 晚", stayId: "rome" },
   { group: "住宿", name: "佛羅倫斯 4 晚", stayId: "florence" },
-  { group: "住宿", name: "羅馬 5 晚", stayId: "rome" },
+  { group: "住宿", name: "威尼斯 3 晚", stayId: "venice" },
+  { group: "住宿", name: "米蘭 3 晚（最後才逛街）", stayId: "milan" },
   {
     group: "義大利交通",
     name: "Frecciarossa 三段　六人對號入座",
-    std: { twd: twd(45 * 4 * 3 + 22 * 2 * 3, "EUR"), note: "2 等 Super Economy。2/12 米蘭→威尼斯、2/15 威尼斯→佛羅倫斯、2/19 佛羅倫斯→羅馬。" },
+    std: { twd: twd(45 * 4 * 3 + 22 * 2 * 3, "EUR"), note: "2 等 Super Economy。2/11 羅馬→佛羅倫斯、2/15 佛羅倫斯→威尼斯、2/18 威尼斯→米蘭。" },
     high: { twd: twd(95 * 4 * 3 + 48 * 2 * 3, "EUR"), note: "Business。家庭意義不大，Standard 即可。" },
   },
   {
@@ -205,7 +206,7 @@ const BUDGET_ROWS = [
   {
     group: "門票",
     name: "梵蒂岡博物館＋競技場聯票",
-    std: { twd: twd(25 * 4 + 18 * 4 + 8 * 4, "EUR"), note: "官方。2/20 梵蒂岡週六、2/22 競技場。" },
+    std: { twd: twd(25 * 4 + 18 * 4 + 8 * 4, "EUR"), note: "官方。2/8 梵蒂岡週一、2/9 競技場。" },
     high: { twd: twd(75 * 6 + 45 * 6, "EUR"), note: "官方導覽／早場。不要第三方 skip-the-line 黃牛。" },
   },
   {
@@ -216,8 +217,8 @@ const BUDGET_ROWS = [
   },
   {
     group: "餐食",
-    name: "15 晚餐　包棟可自煮早餐",
-    std: { twd: 155000, note: "公寓早餐＋披薩／食堂午餐＋部分晚餐。2/14 情人節威尼斯要訂位。" },
+    name: "14 晚餐　包棟可自煮早餐",
+    std: { twd: 145000, note: "公寓早餐＋部分晚餐。2/14 情人節在佛羅倫斯要訂位。" },
     high: { twd: 360000, note: "幾乎每餐餐廳。不含 €800 舞會。" },
   },
   {
@@ -354,7 +355,7 @@ function renderBudget() {
     <article>
       <p class="tag">住宿怎麼分比較便宜</p>
       <h3>包棟贏三間飯店</h3>
-      <p>15 晚整套約 NT$${hotelApt.toLocaleString("zh-Hant")}</p>
+      <p>14 晚整套約 NT$${hotelApt.toLocaleString("zh-Hant")}</p>
       <p>普通飯店 ×3 約 NT$${hotel3.toLocaleString("zh-Hant")}</p>
       <p>必住 ×3 約 NT$${hotelHi.toLocaleString("zh-Hant")}</p>
     </article>`;
