@@ -78,7 +78,7 @@ const STAYS = [
     nights: 4,
     inn: "2027-02-11",
     out: "2027-02-15",
-    why: "D6–D9　烏菲茲、比薩斜塔、大衛",
+    why: "D6–D9　烏菲茲、Oltrarno 工坊、大衛",
     apt: {
       name: "Oltrarno 或 SMN 步行 10 分整套（4 人、2 房）",
       note: "有廚房。Oltrarno 過河叫計程車（可進 ZTL）。同樣問熱水、暖氣、電梯。",
@@ -185,14 +185,8 @@ const BUDGET_ROWS = [
   },
   {
     group: "義大利交通",
-    name: "佛羅倫斯⇄比薩 Regionale",
-    std: { twd: twd(9 * 4 * 2, "EUR"), note: "2/13 當日來回。區域車約 €8–10／人。出站一台計程車去斜塔另計在叫車項。" },
-    high: { twd: twd(9 * 4 * 2, "EUR"), note: "這段不必 Freccia。" },
-  },
-  {
-    group: "義大利交通",
     name: "城內計程車、拿坡里⇄龐貝、MXP、威尼斯水上計程車",
-    std: { twd: twd(20 * 6 + 80 + 110 + 120 * 2, "EUR"), note: "四人一台白計程車。短程約 6 趟、龐貝來回 €80、MXP 一台 €110、威尼斯進出各一艘水上計程車 €120。下載 Free Now。" },
+    std: { twd: twd(20 * 4 + 80 + 110 + 120 * 2, "EUR"), note: "四人一台白計程車。短程約 4 趟、龐貝來回 €80、MXP 一台 €110、威尼斯進出各一艘 €120。下載 Free Now。" },
     high: { twd: twd(35 * 6 + 100 + 150 + 160 * 2, "EUR"), note: "改 Uber Black。通常比白計程車貴。" },
   },
   {
@@ -224,12 +218,6 @@ const BUDGET_ROWS = [
     name: "龐貝遺址",
     std: { twd: twd(18 * 3, "EUR"), note: "官方 pompeiisites.org。成人約 €18，未滿 18 常免費仍要預約。計程車已列在交通。" },
     high: { twd: twd(55 * 4, "EUR"), note: "官方導覽。" },
-  },
-  {
-    group: "門票",
-    name: "比薩斜塔登塔（選配）",
-    std: { twd: twd(22 * 3, "EUR"), note: "廣場外觀免費。登塔約 €20–27、251 級沒電梯。小孩可只在下面拍。" },
-    high: { twd: twd(27 * 4, "EUR"), note: "四人同一時段。" },
   },
   {
     group: "門票",
