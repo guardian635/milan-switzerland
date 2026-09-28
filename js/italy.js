@@ -2,33 +2,33 @@ const START_DATE = "2027-02-06";
 
 const SEASON = [
   ["為什麼倒過來", "最後才米蘭，購物袋不用拖兩週", "羅馬進、米蘭出。Outlet 與金四角放最後兩天，2/21 託運就走。不是因為羅馬比較好玩，是行李。"],
-  ["羅馬", "四晚：梵蒂岡、競技場、龐貝", "2/7 落地梵蒂岡休。2/8 梵蒂岡、2/9 競技場、2/10 龐貝＋拿坡里當日回。天空之城拿掉，多的一晚給佛羅倫斯去比薩。"],
-  ["佛羅倫斯", "四晚：烏菲茲、比薩、大衛", "2/11 轉場、2/12 烏菲茲、2/13 比薩斜塔、2/14 情人節大衛＋Oltrarno。錫耶納仍刪。"],
+  ["羅馬", "四晚：梵蒂岡、競技場、龐貝", "2/7 落地梵蒂岡休。2/8 梵蒂岡、2/9 競技場、2/10 龐貝＋拿坡里當日回。2/11 轉佛羅倫斯。"],
+  ["佛羅倫斯", "四晚：烏菲茲、比薩、大衛", "2/11 轉場、2/12 烏菲茲、2/13 比薩斜塔、2/14 情人節大衛＋Oltrarno。"],
   ["米蘭", "最後三晚：金四角＋Cenacolo＋Serravalle", "2/18 下午到、2/19 逛街與最後的晚餐、2/20 週六 Serravalle、2/21 早飛。袋子只過一晚。"],
   ["晚上", "16:30 是館關門，不是一天結束", "18:00 aperitivo、19:30 晚餐、21:00–21:30 夜走。"],
-  ["不要加的", "嘉年華舞會、五漁村、為了省 4,500 拆兩張羅馬來回", "2/6 進羅馬已放棄嘉年華。"],
+  ["不要加的", "嘉年華舞會、五漁村、阿瑪菲", "2 月南邊海岸多半關門。大包留到米蘭最後兩天再買。"],
 ];
 
 const COMPARE = [
-  ["FCO → Termini", "Leonardo Express 約 32 分（採用）", "定價計程車約 €50；六人加箱通常兩台"],
-  ["羅馬 → 龐貝／拿坡里", "Freccia 約 1 時 10 分（採用）", "拿坡里出站兩台計程車去遺址。不要 Circumvesuviana"],
+  ["FCO → Termini", "Leonardo Express 約 32 分（採用）", "出站一台計程車。四人加兩顆箱通常裝得下"],
+  ["羅馬 → 龐貝／拿坡里", "Freccia 約 1 時 10 分（採用）", "拿坡里出站一台計程車去遺址。不要 Circumvesuviana"],
   ["羅馬 → 佛羅倫斯 SMN", "Frecciarossa 約 1 時 30 分（採用）", "A1 約 3 小時＋ZTL，不自己開"],
-  ["佛羅倫斯 → 比薩", "Regionale 約 1 時–1 時 15 分（採用）", "出站兩台計程車去斜塔約 10 分"],
+  ["佛羅倫斯 → 比薩", "Regionale 約 1 時–1 時 15 分（採用）", "出站一台計程車去斜塔約 10 分"],
   ["佛羅倫斯 → 威尼斯 S. Lucia", "Frecciarossa 約 2 時 05 分（採用）", "島上沒車"],
   ["S. Lucia → 公寓（帶大箱）", "vaporetto 有大箱限制", "水上計程車＝威尼斯的計程車，車站碼頭現場叫"],
   ["威尼斯 → 米蘭 Centrale", "Frecciarossa 約 2 時 25 分（採用）", "A4 約 2 時 45 分，不自己開"],
   ["米蘭 → Serravalle", "官方接駁約 1 時 15–30 分（回程寫死）", "這天箱留公寓，接駁即可"],
-  ["杜奧莫 → MXP T1", "地鐵搬四箱不要", "Free Now／兩台計程車約 50 分。Uber 在米蘭是 Black／Van，更貴"],
+  ["杜奧莫 → MXP T1", "地鐵搬箱不要", "Free Now／一台計程車約 50 分。Uber 在米蘭是 Black，更貴"],
 ];
 
 const BOOKINGS = [
   "現在立刻：開腳商務。去程華航 2/6 TPE→FCO（你查 121,636／人）。先確認是直飛、且週六真的有飛（CI75 冬天常是週二／週日）。回程長榮 BR96 2/21 MXP→TPE（你查約 1,940 €／人），每天有。冬令班次目前 11:00，以機票為準。",
-  "現在立刻：羅馬 2/7–11 包棟（4 晚，能到 Termini）、佛羅倫斯 2/11–15（4 晚）、威尼斯 2/15–18、米蘭杜奧莫 2/18–21。訂房必問：瞬熱熱水或 boiler 公升數、暖氣每天開幾小時、電梯是否先走半層、六人加大箱進不進得去。威尼斯問最近碼頭。",
-  "約 2026/09 下旬：最後的晚餐 2/19。官方 Vivaticket 六人同一 slot，放票日當天搶。搶不到立刻訂 GetYourGuide／Viator 含票英文導覽，不要黃牛、不要等到出發。",
+  "現在立刻：羅馬 2/7–11 整套（4 晚、2 房）、佛羅倫斯 2/11–15、威尼斯 2/15–18、米蘭杜奧莫 2/18–21。訂房必問：瞬熱熱水或 boiler 公升數、暖氣時段、電梯。威尼斯問最近碼頭。",
+  "現在：最後的晚餐 2/19。官方 Vivaticket 四人同一場。搶不到立刻訂 GetYourGuide／Viator 含票英文導覽。",
   "出發前 8–12 週：梵蒂岡 2/8 週一、競技場 2/9、龐貝 2/10、烏菲茲 2/12、學院 2/14。梵蒂岡不要訂 2/7、不要訂 2/11。",
   "開賣就訂：Freccia 2/10 羅馬⇄拿坡里、2/11 羅馬→佛羅倫斯、2/15 佛羅倫斯→威尼斯、2/18 威尼斯→米蘭。2/13 佛羅倫斯⇄比薩買 Regionale 即可，不必 Freccia。",
-  "出發前下載：Free Now、itTaxi。義大利沒有便宜 UberX。六人加箱預設兩台白色計程車。",
-  "出發前 7 天：Serravalle 2/20 接駁。週六人多，但袋子隔天就上飛機。Outlet 做市區退稅；MXP 仍要海關 Otello 感應。",
+  "出發前下載：Free Now、itTaxi。義大利沒有便宜 UberX。四人加兩顆箱預設一台白色計程車。",
+  "出發前 7 天：Serravalle 2/20 接駁。週四人多，但袋子隔天就上飛機。Outlet 做市區退稅；MXP 仍要海關 Otello 感應。",
   "出發前 3 天：核對 BR96、Cenacolo、Freccia、披薩訂位（50 Kalò 或 Starita，不要排 Da Michele）。登塔若要爬，opapisa.it 時段票。",
 ];
 
@@ -38,9 +38,9 @@ const CHECKS = [
   "長榮 BR96 電子登機證（2/21 MXP）",
   "Frecciarossa：2/10 羅馬⇄拿坡里、2/11 羅馬→佛羅倫斯、2/15 佛羅倫斯→威尼斯、2/18 威尼斯→米蘭",
   "Free Now＋itTaxi 已登入（不是台灣那種 UberX）",
-  "2/10 拿坡里車站兩台計程車去龐貝（禁止 Circumvesuviana）",
+  "2/10 拿坡里車站一台計程車去龐貝（禁止 Circumvesuviana）",
   "2/13 佛羅倫斯⇄比薩 Regionale",
-  "2/21 06:50 兩台計程車或 Free Now 去 MXP T1",
+  "2/21 06:50 一台計程車或 Free Now 去 MXP T1",
   "梵蒂岡 2/8、競技場 2/9 官方 QR",
   "龐貝 2/10 官方票 pompeiisites.org",
   "烏菲茲 2/12、學院 2/14 官方 QR",
@@ -57,9 +57,9 @@ const CHECKS = [
   "防水外套＋防滑靴",
   "薄羽絨、手套、小孩備用乾襪",
   "Trenitalia／華航／長榮／ACTV／Free Now／itTaxi App 已登入",
-  "大箱不超過 4 顆",
+  "大箱不超過 2 顆",
   "2/20 Outlet 袋當晚進託運；2/21 只拖箱子去機場",
-  "2/21 06:30 鬧鐘；06:50 兩台計程車去 MXP；先 Otello 再報到",
+  "2/21 06:30 鬧鐘；06:50 一台計程車去 MXP；先 Otello 再報到",
 ];
 
 const TICKETS = [
@@ -79,12 +79,12 @@ const TICKETS = [
     id: "hotel",
     must: true,
     when: "現在立刻",
-    title: "住宿——四大兩小優先包棟",
-    standard: "羅馬 4 晚＋佛羅倫斯 4＋威尼斯 3＋米蘭 3。Booking 整套房或 Airbnb。冬天必問：瞬熱熱水或 boiler 公升數（50–80L 六人會洗到冷水）、暖氣每天開幾小時、電梯尺寸、是否先走半層。",
+    title: "住宿——三大一小，兩房整套",
+    standard: "羅馬 4 晚＋佛羅倫斯 4＋威尼斯 3＋米蘭 3。Booking 整套 2 房或 Airbnb。冬天仍問 boiler：四人連洗，50L 會冷、80L 勉強。暖氣時段、電梯也要問。",
     premium: {
       name: "米蘭 Park Hyatt；羅馬 Hassler 家庭套房",
       rec: true,
-      note: "購物三晚住金四角旁邊。六人問套房或整層。飯店熱水暖氣通常比老公寓穩。"
+      note: "購物三晚住金四角旁邊。問一間家庭套房。飯店熱水通常比老公寓穩。"
     }
   },
   {
@@ -100,7 +100,7 @@ const TICKETS = [
     must: true,
     when: "出發前 8 週",
     title: "競技場聯票　2/9（二）",
-    standard: "colosseo.it。六人同一場。",
+    standard: "colosseo.it。四人同一場。",
     premium: { name: "地下／競技場層", rec: true, note: "早賣完。" }
   },
   {
@@ -108,7 +108,7 @@ const TICKETS = [
     must: true,
     when: "出發前 2–4 週",
     title: "龐貝＋拿坡里　2/10",
-    standard: "官方 pompeiisites.org。Freccia 羅馬⇄拿坡里約 1 時 10 分。Napoli Centrale 出站叫兩台計程車去 Pompei Scavi（約 30–40 分）。禁止 Circumvesuviana。披薩訂 50 Kalò 或 Starita。不要加阿瑪菲。",
+    standard: "官方 pompeiisites.org。Freccia 羅馬⇄拿坡里約 1 時 10 分。Napoli Centrale 出站叫一台計程車去 Pompei Scavi（約 30–40 分）。禁止 Circumvesuviana。披薩訂 50 Kalò 或 Starita。不要加阿瑪菲。",
     premium: null
   },
   {
@@ -124,15 +124,15 @@ const TICKETS = [
     must: true,
     when: "出發前 2–7 天",
     title: "比薩斜塔　2/13",
-    standard: "佛羅倫斯 SMN→Pisa Centrale Regionale 約 1 時–1 時 15 分，當日來回。廣場外觀免費。登塔 251 級、沒電梯，要 opapisa.it 時段票，小孩可只在下面拍。不要再加錫耶納。",
-    premium: { name: "登塔時段票", rec: false, note: "六人同一場。只為照片可不爬。" }
+    standard: "佛羅倫斯 SMN→Pisa Centrale Regionale 約 1 時–1 時 15 分，當日來回。廣場外觀免費。登塔 251 級、沒電梯，要 opapisa.it 時段票，小孩可只在下面拍。",
+    premium: { name: "登塔時段票", rec: false, note: "四人同一場。只為照片可不爬。" }
   },
   {
     id: "supper",
     must: true,
     when: "約 2026/09 下旬",
     title: "《最後的晚餐》2/19",
-    standard: "官方 Vivaticket 每季放票，六人同一 slot 接近秒殺。放票日當天搶。不要排 2/18 抵達當天早場。",
+    standard: "官方 Vivaticket 每季放票，四人同一 slot 接近秒殺。放票日當天搶。不要排 2/18 抵達當天早場。",
     premium: { name: "GetYourGuide／Viator 含票英文導覽", rec: true, note: "官方沒搶到立刻訂正規團，不要第三方黃牛。15 分鐘仍是那幅畫。" }
   },
   {
@@ -148,7 +148,7 @@ const TICKETS = [
     must: true,
     when: "出發前 7 天",
     title: "Serravalle　2/20 週六",
-    standard: "官方接駁 Centrale 9:00／9:30，回程寫死。週六人多，但袋子隔天托運。成人約 €25。",
+    standard: "官方接駁 Centrale 9:00／9:30，回程寫死。週四人多，但袋子隔天托運。成人約 €25。",
     premium: { name: "Fidenza 較早回", rec: false, note: "品牌較少。有整天就 Serravalle。" }
   },
   {
@@ -164,15 +164,15 @@ const TICKETS = [
     must: true,
     when: "出發前下載",
     title: "叫車 App：Free Now／itTaxi",
-    standard: "義大利沒有台灣那種便宜 UberX。羅馬、米蘭：Free Now 叫白色計程車最穩；Uber 多半是 Black／Van，更貴。佛羅倫斯幾乎只有 Uber Black，用 Free Now 或車站排班。拿坡里用車站排班或 Free Now。威尼斯沒有車。六人加四箱預設兩台車。",
-    premium: { name: "Uber Van（羅馬／米蘭）", rec: false, note: "偶爾一台能塞六人。比兩台白計程車貴，不當預設。" }
+    standard: "義大利沒有台灣那種便宜 UberX。羅馬、米蘭：Free Now 叫白色計程車最穩；Uber 多半是 Black，更貴。佛羅倫斯幾乎只有 Uber Black。拿坡里用車站排班或 Free Now。威尼斯沒有車。四人加兩顆箱一台車。",
+    premium: { name: "Uber Black（羅馬／米蘭）", rec: false, note: "比白計程車貴，不當預設。" }
   },
   {
     id: "watertaxi",
     must: false,
     when: "當天現場",
     title: "威尼斯水上計程車　進出帶大箱時",
-    standard: "這是威尼斯的計程車，不是預包一日遊。S. Lucia 碼頭現場叫。六人四箱比 vaporetto 合理。島上觀光三天仍用 3 日卡。",
+    standard: "這是威尼斯的計程車，不是預包一日遊。S. Lucia 碼頭現場叫，一艘坐四人加行李。島上觀光三天仍用 3 日卡。",
     premium: null
   },
 ];
@@ -194,7 +194,7 @@ const DAYS = [
     },
     slots: [
       { t: "19:00", title: "離開台北市區", d: "大年夜塞車。華航在 T1，不是長榮 T2。" },
-      { t: "20:30", title: "桃園 T1 報到", d: "起飛前 3 小時。大箱不超過 4 顆。" },
+      { t: "20:30", title: "桃園 T1 報到", d: "起飛前 3 小時。大箱不超過 2 顆。" },
       { t: "23:00", title: "登機", d: "落地羅馬週日，梵蒂岡休，節奏可以慢。" },
       { t: "23:25", title: "起飛（以機票為準）", d: "CET＝台灣 −7。", buf: true },
     ],
@@ -212,8 +212,8 @@ const DAYS = [
     ],
     transport: {
       mode: "Leonardo Express",
-      detail: "FCO → Termini 約 32 分、每 15 分。六件箱出站叫兩台計程車去公寓。",
-      drive: "定價約 €50／台；六人兩台。",
+      detail: "FCO → Termini 約 32 分、每 15 分。出站一台計程車去公寓。",
+      drive: "定價計程車約 €50。四人加兩顆箱通常一台。",
     },
     slots: [
       { t: "07:15", title: "FCO T3 抵達", d: "以你的航班為準。申根＋行李 60–90 分。" },
@@ -239,7 +239,7 @@ const DAYS = [
     ],
     transport: { mode: "步行／地鐵 A", detail: "Ottaviano／Cipro。入口 Viale Vaticano。", drive: "沒有停車場這回事。" },
     slots: [
-      { t: "07:40", title: "出發", d: "肩、膝蓋住。六人同一時段。" },
+      { t: "07:40", title: "出發", d: "肩、膝蓋住。四人同一時段。" },
       { t: "08:30", title: "梵蒂岡博物館", d: "先拉斐爾廳→西斯汀。" },
       { t: "11:30", title: "西斯汀", d: "禁拍。出來可進聖伯多祿，量力。" },
       { t: "13:30", title: "午餐", d: "不要加競技場。" },
@@ -274,7 +274,7 @@ const DAYS = [
     n: 5, city: "龐貝／拿坡里", title: "龐貝遺址＋拿坡里披薩",
     stay: "羅馬第 4 晚　2/10 週三　當晚回羅馬打包",
     cover: "photos/italy/pompeii.jpg",
-    rent: { yes: false, label: "不自駕 · 計程車", reason: "羅馬→拿坡里 Freccia 比開車快。遺址這段車站叫兩台計程車，禁止 Circumvesuviana。" },
+    rent: { yes: false, label: "不自駕 · 計程車", reason: "羅馬→拿坡里 Freccia 比開車快。遺址這段車站叫一台計程車，禁止 Circumvesuviana。" },
     hotel: { name: "續住羅馬；今晚打包", arrive: "傍晚 Freccia 回 Termini", checkIn: "已入住" },
     photos: [
       { src: "photos/italy/pompeii.jpg", cap: "龐貝，二月較空但風大" },
@@ -282,18 +282,18 @@ const DAYS = [
       { src: "photos/italy/frecciarossa.jpg", cap: "羅馬⇄拿坡里約 1 時 10 分" },
     ],
     transport: {
-      mode: "Frecciarossa ＋ 兩台計程車",
-      detail: "Termini→Napoli Centrale 約 1 時 10 分。出站排班或 Free Now 兩台計程車到 Pompei Scavi（約 30–40 分）。不要 Circumvesuviana。傍晚 Freccia 回羅馬。",
+      mode: "Frecciarossa ＋ 一台計程車",
+      detail: "Termini→Napoli Centrale 約 1 時 10 分。出站排班或 Free Now 一台計程車到 Pompei Scavi（約 30–40 分）。不要 Circumvesuviana。傍晚 Freccia 回羅馬。",
       drive: "不從羅馬開車。A1 約 2 時 15 分，比火車慢。",
     },
     slots: [
       { t: "07:00", title: "Termini 早班 Freccia", d: "對號。帶水、帽子、防滑靴。大箱留羅馬。" },
-      { t: "08:20", title: "拿坡里出站叫兩台計程車", d: "直達遺址入口。現場排班或 Free Now。" },
+      { t: "08:20", title: "拿坡里出站叫一台計程車", d: "直達遺址入口。現場排班或 Free Now。" },
       { t: "09:10", title: "龐貝遺址", d: "官方票。家庭 2.5–3 小時，選一條線走。冬天約 15:30 趕人。" },
       { t: "12:30", title: "計程車回拿坡里，訂位披薩", d: "50 Kalò 或 Starita。不要排 Da Michele。" },
       { t: "14:30", title: "拿坡里老城短走", d: "不要加卡布里、阿瑪菲。" },
       { t: "16:30", title: "Freccia 回羅馬", d: "約 1 時 10 分。誤點下一班。", buf: true },
-      { t: "18:30", title: "Termini 兩台計程車回公寓", d: "簡單晚餐、打包。明天轉佛羅倫斯。" },
+      { t: "18:30", title: "Termini 一台計程車回公寓", d: "簡單晚餐、打包。明天轉佛羅倫斯。" },
       { t: "21:00", title: "早睡", d: "明天退房。" },
     ],
   },
@@ -301,18 +301,18 @@ const DAYS = [
     n: 6, city: "佛羅倫斯", title: "轉場，舊橋定位",
     stay: "Oltrarno／SMN，連住 4 晚　2/11 週四",
     cover: "photos/italy/florence-ponte.jpg",
-    rent: { yes: false, label: "不租車", reason: "Freccia 約 1 時 30 分。ZTL。出站兩台計程車。" },
+    rent: { yes: false, label: "不租車", reason: "Freccia 約 1 時 30 分。ZTL。出站一台計程車。" },
     hotel: { name: "整套公寓", arrive: "約 13:30–14:30", checkIn: "15:00" },
     photos: [
       { src: "photos/italy/frecciarossa.jpg", cap: "羅馬→佛羅倫斯約 1 時 30 分" },
       { src: "photos/italy/florence-ponte.jpg", cap: "舊橋，下午只走外觀" },
       { src: "photos/italy/florence-duomo.jpg", cap: "主教堂外觀" },
     ],
-    transport: { mode: "Frecciarossa ＋ 計程車", detail: "Termini 約 10:00 → SMN 約 11:30。Oltrarno 過河叫兩台計程車（可進 ZTL）。2/11 梵蒂岡休，當轉場日正好。", drive: "ZTL。不自己開。" },
+    transport: { mode: "Frecciarossa ＋ 計程車", detail: "Termini 約 10:00 → SMN 約 11:30。Oltrarno 過河叫一台計程車（可進 ZTL）。2/11 梵蒂岡休，當轉場日正好。", drive: "ZTL。不自己開。" },
     slots: [
       { t: "09:00", title: "羅馬退房", d: "Termini 對號。昨天龐貝若誤點，改 11:00 那班。" },
       { t: "10:00", title: "Freccia 往 SMN", d: "這段最短。" },
-      { t: "11:40", title: "SMN 抵達", d: "兩台計程車去公寓。" },
+      { t: "11:40", title: "SMN 抵達", d: "一台計程車去公寓。" },
       { t: "13:00", title: "寄行李、午餐", d: "不進烏菲茲。" },
       { t: "16:00", title: "主教堂外觀＋舊橋", d: "建立方位。" },
       { t: "17:40", title: "舊橋黃昏", d: "二月日落約 17:40。" },
@@ -347,7 +347,7 @@ const DAYS = [
     n: 8, city: "比薩", title: "斜塔外觀，當晚回佛羅倫斯",
     stay: "佛羅倫斯第 3 晚　2/13 週六",
     cover: "photos/italy/pisa.jpg",
-    rent: { yes: false, label: "不租車", reason: "Regionale 約 1 時。出站兩台計程車去廣場。" },
+    rent: { yes: false, label: "不租車", reason: "Regionale 約 1 時。出站一台計程車去廣場。" },
     hotel: { name: "續住佛羅倫斯", arrive: "傍晚火車回 SMN", checkIn: "已入住" },
     photos: [
       { src: "photos/italy/pisa.jpg", cap: "比薩斜塔與主教堂，廣場外觀免費" },
@@ -356,16 +356,16 @@ const DAYS = [
     ],
     transport: {
       mode: "Regionale ＋ 計程車",
-      detail: "SMN→Pisa Centrale 約 1 時–1 時 15 分，班次密。出站兩台計程車約 10 分到奇蹟廣場；晴天可走 25 分。不要 Autolinee 一日遊塞錫耶納。",
+      detail: "SMN→Pisa Centrale 約 1 時–1 時 15 分，班次密。出站一台計程車約 10 分到奇蹟廣場；晴天可走 25 分。",
       drive: "不自己開。回程同一條火車。",
     },
     slots: [
       { t: "08:10", title: "SMN 區域火車", d: "大箱留公寓。對號與否看車種，以 App 為準。" },
-      { t: "09:25", title: "Pisa Centrale", d: "兩台計程車去 Piazza dei Miracoli。" },
+      { t: "09:25", title: "Pisa Centrale", d: "一台計程車去 Piazza dei Miracoli。" },
       { t: "09:45", title: "斜塔廣場外觀", d: "拍照 60–90 分就夠。登塔 251 級沒電梯，要 opapisa.it 時段；小孩可只在下面。" },
       { t: "12:00", title: "廣場午餐", d: "觀光價，吃完就走。" },
       { t: "13:30", title: "火車回佛羅倫斯", d: "誤點下一班。", buf: true },
-      { t: "15:00", title: "SMN 回公寓休息", d: "不要再加錫耶納。" },
+      { t: "15:00", title: "SMN 回公寓休息", d: "下午留在佛羅倫斯。" },
       { t: "19:30", title: "晚餐", d: "明天情人節大衛，早訂。" },
       { t: "21:00", title: "早點回", d: "連續移動，小孩會累。" },
     ],
@@ -374,7 +374,7 @@ const DAYS = [
     n: 9, city: "佛羅倫斯", title: "情人節：大衛＋Oltrarno（不是空白日）",
     stay: "佛羅倫斯第 4 晚　2/14 週日",
     cover: "photos/italy/florence-david.jpg",
-    rent: { yes: false, label: "不租車", reason: "錫耶納刪掉。今天把大衛與工坊做完。" },
+    rent: { yes: false, label: "不租車", reason: "今天把大衛與工坊做完。" },
     hotel: { name: "續住；今晚打包", arrive: "已在公寓", checkIn: "已入住" },
     photos: [
       { src: "photos/italy/florence-david.jpg", cap: "學院 Accademia，情人節早訂" },
@@ -403,11 +403,11 @@ const DAYS = [
       { src: "photos/italy/venice-sanmarco.jpg", cap: "聖馬可，沒有面具高峰" },
       { src: "photos/italy/venice-canal.jpg", cap: "大運河" },
     ],
-    transport: { mode: "Frecciarossa ＋ 水上計程車", detail: "SMN 約 10:25 → S. Lucia 約 12:30。出站碼頭現場叫水上計程車（六人可能要兩艘，看船型）。vaporetto 3 日卡留給後面兩天觀光。", drive: "島上沒車。沒有 Uber。" },
+    transport: { mode: "Frecciarossa ＋ 水上計程車", detail: "SMN 約 10:25 → S. Lucia 約 12:30。出站碼頭現場叫水上計程車（四人可能要兩艘，看船型）。vaporetto 3 日卡留給後面兩天觀光。", drive: "島上沒車。沒有 Uber。" },
     slots: [
       { t: "09:20", title: "SMN 退房", d: "對號。" },
       { t: "10:25", title: "Freccia 往威尼斯", d: "約 2 小時。" },
-      { t: "12:40", title: "碼頭叫水上計程車", d: "現場叫，不是預包一日。不要抬四箱擠 vaporetto。" },
+      { t: "12:40", title: "碼頭叫水上計程車", d: "現場叫，不是預包一日。不要抬大箱擠 vaporetto。" },
       { t: "14:00", title: "寄行李、午餐", d: "不排總督宮。" },
       { t: "16:00", title: "聖馬可外觀", d: "建立方位。現在可以買 vaporetto 3 日卡。" },
       { t: "18:00", title: "aperitivo", d: "離開廣場兩條街。" },
@@ -468,11 +468,11 @@ const DAYS = [
       { src: "photos/galleria.jpg", cap: "迴廊，傍晚開始逛" },
       { src: "photos/italy/milan-montenapoleone.jpg", cap: "金四角，袋子只從這裡帶回家" },
     ],
-    transport: { mode: "水上計程車 ＋ Frecciarossa ＋計程車", detail: "公寓碼頭現場叫船到 S. Lucia，約 10:35 Freccia → Centrale 約 13:00。出站 Free Now／兩台計程車去杜奧莫，不要地鐵搬四箱。", drive: "ZTL。不自己開。" },
+    transport: { mode: "水上計程車 ＋ Frecciarossa ＋計程車", detail: "公寓碼頭現場叫船到 S. Lucia，約 10:35 Freccia → Centrale 約 13:00。出站 Free Now／一台計程車去杜奧莫，不要地鐵搬箱。", drive: "ZTL。不自己開。" },
     slots: [
       { t: "08:15", title: "碼頭叫水上計程車去車站", d: "大箱上船。不要 vaporetto。" },
       { t: "10:35", title: "Freccia 往米蘭", d: "約 2 時 25 分。" },
-      { t: "13:10", title: "Centrale → 杜奧莫", d: "兩台計程車或 Free Now。寄行李。今天不當 Outlet 日。" },
+      { t: "13:10", title: "Centrale → 杜奧莫", d: "一台計程車或 Free Now。寄行李。今天不當 Outlet 日。" },
       { t: "15:30", title: "迴廊＋Montenapoleone 櫥窗", d: "記店。大買明天進店、後天 Outlet。" },
       { t: "18:30", title: "金四角 aperitivo", d: "Cova 或附近。" },
       { t: "19:45", title: "晚餐", d: "迴廊／Brera。明天最後的晚餐早場或下午場。" },
@@ -486,7 +486,7 @@ const DAYS = [
     rent: { yes: false, label: "不租車", reason: "步行＋地鐵。" },
     hotel: { name: "續住", arrive: "已在公寓", checkIn: "已入住" },
     photos: [
-      { src: "photos/last-supper.jpg", cap: "15 分鐘，六人同一場" },
+      { src: "photos/last-supper.jpg", cap: "15 分鐘，四人同一場" },
       { src: "photos/duomo-roof.jpg", cap: "屋頂選電梯" },
       { src: "photos/italy/milan-montenapoleone.jpg", cap: "今天進店，過季留明天 Outlet" },
       { src: "photos/grazie.jpg", cap: "Santa Maria delle Grazie" },
@@ -494,7 +494,7 @@ const DAYS = [
     transport: { mode: "步行／地鐵", detail: "杜奧莫 → 感恩教堂約 20–25 分。", drive: "不需要。" },
     slots: [
       { t: "08:40", title: "出發感恩教堂", d: "場次以官方或含票導覽為準。上午場則屋頂下午。" },
-      { t: "09:15", title: "《最後的晚餐》", d: "約 15 分。六人同一 slot。" },
+      { t: "09:15", title: "《最後的晚餐》", d: "約 15 分。四人同一 slot。" },
       { t: "10:30", title: "大教堂內部＋屋頂", d: "電梯。" },
       { t: "13:00", title: "午餐", d: "迴廊。" },
       { t: "15:00", title: "金四角進店／Corso Buenos Aires", d: "旗艦今天買。平價走 Buenos Aires。不要兩條都爆走。" },
@@ -515,7 +515,7 @@ const DAYS = [
     ],
     transport: {
       mode: "官方 Outlet 接駁",
-      detail: "Centrale 9:00 或 9:30，約 1 時 15–30 分。回程 16:15／17:15 寫死。週六人多，但這是唯一「買完隔天就上飛機」的日子。成人約 €25。",
+      detail: "Centrale 9:00 或 9:30，約 1 時 15–30 分。回程 16:15／17:15 寫死。週四人多，但這是唯一「買完隔天就上飛機」的日子。成人約 €25。",
       drive: "A7 約 1 時。明天早飛不租。",
     },
     slots: [
@@ -526,14 +526,14 @@ const DAYS = [
       { t: "16:15", title: "票面回程", d: "17:15 也行。19:15 太晚。", buf: true },
       { t: "18:30", title: "回公寓收箱", d: "袋進託運。這就是「最後才買、不用拖兩週」。" },
       { t: "19:30", title: "杜奧莫附近晚餐", d: "不要再跑 Navigli。" },
-      { t: "21:30", title: "睡覺", d: "06:30 起床。06:50 叫兩台計程車。" },
+      { t: "21:30", title: "睡覺", d: "06:30 起床。06:50 叫一台計程車。" },
     ],
   },
   {
     n: 16, city: "台北方向", title: "米蘭早班起飛",
     stay: "BR96 機上（2/22 清晨抵桃園）",
     cover: "photos/duomo.jpg",
-    rent: { yes: false, label: "不自駕 · 計程車", reason: "四箱不要擠地鐵。Free Now 或兩台計程車直送 T1。米蘭 Uber 是 Black／Van，通常更貴。" },
+    rent: { yes: false, label: "不自駕 · 計程車", reason: "行李不要擠地鐵。Free Now 或一台計程車直送 T1。米蘭 Uber 是 Black，通常更貴。" },
     hotel: { name: "機上", arrive: "2/22 約 06:10 桃園 T2", checkIn: "—" },
     photos: [
       { src: "photos/centrale.jpg", cap: "備用：叫不到車才改 Cadorna Express" },
@@ -542,12 +542,12 @@ const DAYS = [
     ],
     transport: {
       mode: "計程車 ＋ BR96",
-      detail: "06:50 杜奧莫 Free Now 或兩台白色計程車，高速約 50 分到 MXP T1。冬令 BR96 目前 11:00，以機票為準。TPE 2/22 約 06:10，長榮 T2。叫不到車才改 Cadorna Malpensa Express（約 37 分）。",
+      detail: "06:50 杜奧莫 Free Now 或一台白色計程車，高速約 50 分到 MXP T1。冬令 BR96 目前 11:00，以機票為準。TPE 2/22 約 06:10，長榮 T2。叫不到車才改 Cadorna Malpensa Express（約 37 分）。",
       drive: "不租還車。",
     },
     slots: [
       { t: "06:30", title: "起床退房", d: "護照、登機證、退稅單、水。Outlet 袋已在箱。" },
-      { t: "06:50", title: "兩台計程車上樓", d: "Free Now 預先叫。不要地鐵 M3。", buf: true },
+      { t: "06:50", title: "一台計程車上樓", d: "Free Now 預先叫。不要地鐵 M3。", buf: true },
       { t: "07:50", title: "MXP T1 下車", d: "先海關 Otello 感應退稅條，再去長榮報到。8–9 點退稅常排隊。" },
       { t: "08:30", title: "報到＋托運", d: "國際線商務也要留時間。退稅沒感應，款會被扣回外加罰金。" },
       { t: "11:00", title: "BR96 起飛", d: "以機票時刻為準。時區改回台灣。" },

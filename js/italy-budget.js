@@ -1,5 +1,5 @@
 const FX = { EUR: 36, asOf: "2026-08-24" };
-const PARTY = { adults: 4, children: 2, hotelRooms: 3 };
+const PARTY = { adults: 3, children: 1, childAge: 8, hotelRooms: 2, size: 4 };
 
 function twd(amount, cur) {
   if (cur === "TWD") return Math.round(amount);
@@ -16,13 +16,12 @@ function bookingApt(ss, checkin, checkout) {
     ss, checkin, checkout,
     group_adults: String(PARTY.adults),
     group_children: String(PARTY.children),
-    age: "8",
+    age: String(PARTY.childAge),
     no_rooms: "1",
     lang: "zh-tw",
     selected_currency: "TWD",
     nflt: "privacy_type=3",
   });
-  q.append("age", "10");
   return `https://www.booking.com/searchresults.zh-tw.html?${q}`;
 }
 function bookingHotelSearch(ss, checkin, checkout) {
@@ -30,12 +29,11 @@ function bookingHotelSearch(ss, checkin, checkout) {
     ss, checkin, checkout,
     group_adults: String(PARTY.adults),
     group_children: String(PARTY.children),
-    age: "8",
+    age: String(PARTY.childAge),
     no_rooms: String(PARTY.hotelRooms),
     lang: "zh-tw",
     selected_currency: "TWD",
   });
-  q.append("age", "10");
   return `https://www.booking.com/searchresults.zh-tw.html?${q}`;
 }
 function airbnbSearch(place, checkin, checkout) {
@@ -56,22 +54,22 @@ const STAYS = [
     out: "2027-02-11",
     why: "D2–D5　梵蒂岡 2/8、競技場、龐貝 2/10",
     apt: {
-      name: "Prati 或 metro A 整套（6 人、3 房）",
+      name: "Prati 或 metro A 整套（4 人、2 房）",
       note: "落地 Leonardo Express 到 Termini。2/11 轉佛羅倫斯，住太深的 Trastevere 搬箱會痛。問清：瞬熱熱水或 boiler 公升數、暖氣時段、電梯是否先走半層。",
-      night: 390, cur: "EUR",
+      night: 280, cur: "EUR",
       search: "Rome Prati",
     },
     hotel3: {
-      name: "4 星 × 3 間",
+      name: "4 星 × 2 間",
       note: "西班牙階梯一帶三間會很貴。",
       night: 250, cur: "EUR",
     },
     high: {
       name: "Hassler／Hotel de Russie × 家庭套房",
       must: true,
-      note: "六人問套房或兩間連通。",
+      note: "三人加小孩問一間家庭套房，或兩間連通。",
       night: 1200, cur: "EUR",
-      aptNight: 900, aptCur: "EUR",
+      aptNight: 650, aptCur: "EUR",
     },
   },
   {
@@ -80,24 +78,24 @@ const STAYS = [
     nights: 4,
     inn: "2027-02-11",
     out: "2027-02-15",
-    why: "D6–D9　烏菲茲、比薩斜塔、大衛。錫耶納刪掉。",
+    why: "D6–D9　烏菲茲、比薩斜塔、大衛",
     apt: {
-      name: "Oltrarno 或 SMN 步行 10 分整套（6 人、3 房）",
+      name: "Oltrarno 或 SMN 步行 10 分整套（4 人、2 房）",
       note: "有廚房。Oltrarno 過河叫計程車（可進 ZTL）。同樣問熱水、暖氣、電梯。",
-      night: 340, cur: "EUR",
+      night: 250, cur: "EUR",
       search: "Florence Oltrarno",
     },
     hotel3: {
-      name: "4 星 × 3 間",
+      name: "4 星 × 2 間",
       note: "三間加總通常比包棟貴。",
       night: 210, cur: "EUR",
     },
     high: {
       name: "Portrait Firenze／Hotel Savoy × 家庭套房",
       must: true,
-      note: "六人問 connecting 或整層。",
+      note: "問一間家庭套房或兩間連通。",
       night: 950, cur: "EUR",
-      aptNight: 780, aptCur: "EUR",
+      aptNight: 560, aptCur: "EUR",
     },
   },
   {
@@ -108,22 +106,22 @@ const STAYS = [
     out: "2027-02-18",
     why: "D10–D12　嘉年華後的水城",
     apt: {
-      name: "運河整套公寓（3 房／6 人）",
+      name: "運河整套公寓（2 房／4 人）",
       note: "嘉年華已過，較好訂。最近碼頭 5 分內（進出帶箱時現場叫水上計程車）、盡量有電梯且不要先走半層。問熱水 boiler 與暖氣時段。",
-      night: 380, cur: "EUR",
+      night: 280, cur: "EUR",
       search: "Venice Cannaregio",
     },
     hotel3: {
-      name: "4 星 × 3 間",
+      name: "4 星 × 2 間",
       note: "三間通常比包棟貴。",
       night: 280, cur: "EUR",
     },
     high: {
       name: "Gritti／Danieli 家庭套房或 palazzo 整層",
       must: true,
-      note: "不要硬開三間總統。",
+      note: "問家庭套房，不必三間。",
       night: 1400, cur: "EUR",
-      aptNight: 1100, aptCur: "EUR",
+      aptNight: 800, aptCur: "EUR",
     },
   },
   {
@@ -134,22 +132,22 @@ const STAYS = [
     out: "2027-02-21",
     why: "D13–D15　金四角、最後的晚餐、Serravalle、2/21 早飛",
     apt: {
-      name: "杜奧莫／Montenapoleone 整套（3 房／6 人）",
-      note: "最後才逛街，袋子隔天托運。2/21 06:50 兩台計程車或 Free Now 去 MXP。不要訂太靠 Navigli。",
-      night: 360, cur: "EUR",
+      name: "杜奧莫／Montenapoleone 整套（2 房／4 人）",
+      note: "最後才逛街，袋子隔天托運。2/21 06:50 一台計程車或 Free Now 去 MXP。不要訂太靠 Navigli。",
+      night: 260, cur: "EUR",
       search: "Milan Duomo",
     },
     hotel3: {
-      name: "4 星 × 3 間",
+      name: "4 星 × 2 間",
       note: "Spadari／NH 等級。三間加總通常比包棟貴。",
       night: 220, cur: "EUR",
     },
     high: {
       name: "Park Hyatt × 家庭套房　或　杜奧莫景觀整層",
       must: true,
-      note: "金四角旁邊。六人問套房或整層。",
+      note: "金四角旁邊。問一間家庭套房。",
       night: 1200, cur: "EUR",
-      aptNight: 850, aptCur: "EUR",
+      aptNight: 620, aptCur: "EUR",
     },
   },
 ];
@@ -171,9 +169,9 @@ function highAptTotal(stay) {
 const BUDGET_ROWS = [
   {
     group: "機票",
-    name: "開腳　華航去羅馬 ＋ 長榮回米蘭　4 成人＋2 兒童（估兒童 75%）",
-    std: { twd: 62000 * 4 + 46500 * 2, note: "兩段單程經濟艙估。2/6 大年夜去程仍旺。" },
-    high: { twd: (121636 + 69833) * 4 + Math.round((121636 + 69833) * 0.75) * 2, note: "你查的商務：去程羅馬 121,636＋回程米蘭 1,939.81€（約 69,833）。合計約 191,469／成人。" },
+    name: "開腳　華航去羅馬 ＋ 長榮回米蘭　3 成人＋1 兒童（估兒童 75%）",
+    std: { twd: 62000 * 3 + 46500, note: "兩段單程經濟艙估。2/6 大年夜去程仍旺。" },
+    high: { twd: (121636 + 69833) * 3 + Math.round((121636 + 69833) * 0.75), note: "你查的商務：去程羅馬 121,636＋回程米蘭 1,939.81€（約 69,833）。合計約 191,469／成人。小孩先按 75%。" },
   },
   { group: "住宿", name: "羅馬 4 晚", stayId: "rome" },
   { group: "住宿", name: "佛羅倫斯 4 晚", stayId: "florence" },
@@ -181,75 +179,75 @@ const BUDGET_ROWS = [
   { group: "住宿", name: "米蘭 3 晚（最後才逛街）", stayId: "milan" },
   {
     group: "義大利交通",
-    name: "Frecciarossa　羅馬⇄拿坡里＋三段北上　六人對號",
-    std: { twd: twd(45 * 4 * 5 + 22 * 2 * 5, "EUR"), note: "2 等 Super Economy。2/10 羅馬⇄拿坡里、2/11 羅馬→佛羅倫斯、2/15 佛羅倫斯→威尼斯、2/18 威尼斯→米蘭。" },
-    high: { twd: twd(95 * 4 * 5 + 48 * 2 * 5, "EUR"), note: "Business。家庭意義不大，Standard 即可。" },
+    name: "Frecciarossa　羅馬⇄拿坡里＋三段北上　四人對號",
+    std: { twd: twd(45 * 3 * 5 + 22 * 5, "EUR"), note: "2 等 Super Economy。成人 3、小孩 1 估半價。2/10 羅馬⇄拿坡里、2/11 羅馬→佛羅倫斯、2/15 佛羅倫斯→威尼斯、2/18 威尼斯→米蘭。" },
+    high: { twd: twd(95 * 3 * 5 + 48 * 5, "EUR"), note: "Business。家庭意義不大，Standard 即可。" },
   },
   {
     group: "義大利交通",
     name: "佛羅倫斯⇄比薩 Regionale",
-    std: { twd: twd(9 * 6 * 2, "EUR"), note: "2/13 當日來回。區域車約 €8–10／人。出站兩台計程車去斜塔另計在叫車項。" },
-    high: { twd: twd(9 * 6 * 2, "EUR"), note: "這段不必 Freccia。" },
+    std: { twd: twd(9 * 4 * 2, "EUR"), note: "2/13 當日來回。區域車約 €8–10／人。出站一台計程車去斜塔另計在叫車項。" },
+    high: { twd: twd(9 * 4 * 2, "EUR"), note: "這段不必 Freccia。" },
   },
   {
     group: "義大利交通",
     name: "城內計程車、拿坡里⇄龐貝、MXP、威尼斯水上計程車",
-    std: { twd: twd(25 * 8 + 80 + 120 + 130 * 2, "EUR"), note: "六人預設兩台白計程車。龐貝來回估 €80、MXP 兩台估 €120、威尼斯進出現場叫水上計程車估 €130／趟。下載 Free Now。" },
-    high: { twd: twd(40 * 8 + 120 + 160 + 180 * 2, "EUR"), note: "改 Uber Van／較大水上計程車。" },
+    std: { twd: twd(20 * 6 + 80 + 110 + 120 * 2, "EUR"), note: "四人一台白計程車。短程約 6 趟、龐貝來回 €80、MXP 一台 €110、威尼斯進出各一艘水上計程車 €120。下載 Free Now。" },
+    high: { twd: twd(35 * 6 + 100 + 150 + 160 * 2, "EUR"), note: "改 Uber Black。通常比白計程車貴。" },
   },
   {
     group: "義大利交通",
     name: "Leonardo Express、vaporetto 3 日、羅馬地鐵、Outlet 接駁",
-    std: { twd: twd(14 * 6 + 45 * 6 + 25 * 6 + 25 * 4 + 10 * 2, "EUR"), note: "進羅馬 Leonardo Express。2/21 改計程車，不計這列。" },
-    high: { twd: twd(50 * 2 + 45 * 6 + 40 * 6 + 120, "EUR"), note: "FCO 定價車＋Outlet 私人車" },
+    std: { twd: twd(14 * 4 + 45 * 3 + 22 + 18 * 4 + 25 * 3 + 12, "EUR"), note: "Leonardo Express、威尼斯 3 日卡（小孩估折扣）、羅馬交通、Serravalle 接駁。2/21 改計程車，不計這列。" },
+    high: { twd: twd(55 + 45 * 4 + 40 * 4 + 80, "EUR"), note: "FCO 定價計程車一台＋Outlet 私人車" },
   },
   {
     group: "門票",
     name: "威尼斯總督宮＋聖馬可博物館",
-    std: { twd: twd(30 * 4 + 15 * 2, "EUR"), note: "街道免費。總督宮兒童減免依年齡。" },
-    high: { twd: twd(85 * 6, "EUR"), note: "含導覽。Il Ballo del Doge 等舞會 €800 起，不列入家庭行程。" },
+    std: { twd: twd(30 * 3 + 15, "EUR"), note: "街道免費。總督宮兒童減免依年齡，這裡先按一張半票。" },
+    high: { twd: twd(85 * 4, "EUR"), note: "含導覽。舞會不排。" },
   },
   {
     group: "門票",
     name: "烏菲茲＋學院（大衛）",
-    std: { twd: twd(29 * 4 + 20 * 4, "EUR"), note: "官方提前票。義大利／歐盟未滿 18 常免費但仍要預約。兩館不要同一天。" },
-    high: { twd: twd(70 * 6, "EUR"), note: "官方小團導覽。Vasari 走廊另計、二月不一定開。" },
+    std: { twd: twd(29 * 3 + 20 * 3, "EUR"), note: "官方提前票。未滿 18 常免費但仍要預約。兩館不要同一天。" },
+    high: { twd: twd(70 * 4, "EUR"), note: "官方小團導覽。Vasari 走廊另計、二月不一定開。" },
   },
   {
     group: "門票",
     name: "梵蒂岡博物館＋競技場聯票",
-    std: { twd: twd(25 * 4 + 18 * 4 + 8 * 4, "EUR"), note: "官方。2/8 梵蒂岡週一、2/9 競技場。" },
-    high: { twd: twd(75 * 6 + 45 * 6, "EUR"), note: "官方導覽／早場。不要第三方 skip-the-line 黃牛。" },
+    std: { twd: twd(25 * 3 + 18 * 3 + 8 * 3, "EUR"), note: "官方。2/8 梵蒂岡週一、2/9 競技場。小孩未滿 18 常免費，仍占名額。" },
+    high: { twd: twd(75 * 4 + 45 * 4, "EUR"), note: "官方導覽／早場。不要第三方黃牛。" },
   },
   {
     group: "門票",
     name: "龐貝遺址",
-    std: { twd: twd(18 * 4, "EUR"), note: "官方 pompeiisites.org。成人約 €18，歐盟未滿 18 常免費仍要預約。計程車已列在交通。" },
-    high: { twd: twd(55 * 6, "EUR"), note: "官方導覽。" },
+    std: { twd: twd(18 * 3, "EUR"), note: "官方 pompeiisites.org。成人約 €18，未滿 18 常免費仍要預約。計程車已列在交通。" },
+    high: { twd: twd(55 * 4, "EUR"), note: "官方導覽。" },
   },
   {
     group: "門票",
     name: "比薩斜塔登塔（選配）",
-    std: { twd: twd(22 * 4, "EUR"), note: "廣場外觀免費。登塔約 €20–27、251 級沒電梯。小孩可只在下面拍。" },
-    high: { twd: twd(27 * 6, "EUR"), note: "六人同一時段。" },
+    std: { twd: twd(22 * 3, "EUR"), note: "廣場外觀免費。登塔約 €20–27、251 級沒電梯。小孩可只在下面拍。" },
+    high: { twd: twd(27 * 4, "EUR"), note: "四人同一時段。" },
   },
   {
     group: "門票",
     name: "最後的晚餐＋米蘭大教堂屋頂＋聖天使堡",
-    std: { twd: twd(15 * 4 + 20 * 6 + 16 * 4, "EUR"), note: "Cenacolo 未滿 18 免費仍要預約。屋頂選電梯。" },
-    high: { twd: twd(15 * 4 + 45 * 6 + 30 * 6, "EUR"), note: "加導覽／快速通道" },
+    std: { twd: twd(15 * 3 + 20 * 4 + 16 * 3, "EUR"), note: "Cenacolo 未滿 18 免費仍要預約，四人同一場。屋頂選電梯。" },
+    high: { twd: twd(15 * 3 + 45 * 4 + 30 * 4, "EUR"), note: "加導覽／快速通道" },
   },
   {
     group: "餐食",
     name: "14 晚餐　包棟可自煮早餐",
-    std: { twd: 145000, note: "公寓早餐＋部分晚餐。2/14 情人節在佛羅倫斯要訂位。" },
-    high: { twd: 360000, note: "幾乎每餐餐廳。不含 €800 舞會。" },
+    std: { twd: 98000, note: "四人。公寓早餐＋部分晚餐。2/14 情人節在佛羅倫斯要訂位。" },
+    high: { twd: 240000, note: "幾乎每餐餐廳。" },
   },
   {
     group: "其他",
     name: "保險、SIM、雜支、緩衝、退稅",
-    std: { twd: 32000, note: "六人旅平險＋兩張歐遊卡。Outlet 購物另計，不列入。" },
-    high: { twd: 90000, note: "取消險＋私人接送＋行李運送" },
+    std: { twd: 22000, note: "四人旅平險＋一張歐遊卡。Outlet 購物另計，不列入。" },
+    high: { twd: 60000, note: "取消險＋行李運送" },
   },
 ];
 
@@ -271,7 +269,7 @@ function rowStdNote(row) {
 function rowHighNote(row) {
   if (row.stayId) {
     const s = STAYS.find((x) => x.id === row.stayId);
-    return `${s.high.name}　${s.nights} 晚 × 3 間 × ${money(s.high.night, s.high.cur).split("（")[0].trim()}`;
+    return `${s.high.name}　${s.nights} 晚 × ${PARTY.hotelRooms} 間 × ${money(s.high.night, s.high.cur).split("（")[0].trim()}`;
   }
   return row.high.note;
 }
@@ -287,7 +285,7 @@ function renderHotels() {
     return `
       <article class="stay-card">
         <header>
-          <p class="tag">${s.nights} 晚　${s.inn} → ${s.out}　四大兩小</p>
+          <p class="tag">${s.nights} 晚　${s.inn} → ${s.out}　三大一小</p>
           <h3>${s.place}</h3>
           <p>${s.why}</p>
         </header>
@@ -296,22 +294,22 @@ function renderHotels() {
             <p class="tier">普通 · 包棟／整套（建議）</p>
             <h4>${s.apt.name}</h4>
             <p>${s.apt.note}</p>
-            <p class="price">參考 ${money(s.apt.night, s.apt.cur)}／套／晚<br/>${s.nights} 晚約 NT$${apt.toLocaleString("zh-Hant")}<br/>六人分擔每晚約 NT$${Math.round(twd(s.apt.night, s.apt.cur) / 6).toLocaleString("zh-Hant")}</p>
+            <p class="price">參考 ${money(s.apt.night, s.apt.cur)}／套／晚<br/>${s.nights} 晚約 NT$${apt.toLocaleString("zh-Hant")}<br/>四人分擔每晚約 NT$${Math.round(twd(s.apt.night, s.apt.cur) / PARTY.size).toLocaleString("zh-Hant")}</p>
             <a class="book-btn" href="${bookingApt(s.apt.search, s.inn, s.out)}" target="_blank" rel="noopener">Booking 整套房</a>
             <a class="book-btn ghost" href="${airbnbSearch(s.apt.search, s.inn, s.out)}" target="_blank" rel="noopener">Airbnb 整套房</a>
           </div>
           <div class="stay-opt mid">
-            <p class="tier">對照 · 普通飯店 × 3 間</p>
+            <p class="tier">對照 · 普通飯店 × ${PARTY.hotelRooms} 間</p>
             <h4>${s.hotel3.name}</h4>
             <p>${s.hotel3.note}</p>
-            <p class="price">參考 ${money(s.hotel3.night, s.hotel3.cur)}／間／晚 × 3<br/>${s.nights} 晚約 NT$${h3.toLocaleString("zh-Hant")}<br/>比包棟貴約 NT$${(h3 - apt).toLocaleString("zh-Hant")}</p>
-            <a class="book-btn" href="${bookingHotelSearch(s.place, s.inn, s.out)}" target="_blank" rel="noopener">Booking 3 間房</a>
+            <p class="price">參考 ${money(s.hotel3.night, s.hotel3.cur)}／間／晚 × ${PARTY.hotelRooms}<br/>${s.nights} 晚約 NT$${h3.toLocaleString("zh-Hant")}<br/>比包棟貴約 NT$${(h3 - apt).toLocaleString("zh-Hant")}</p>
+            <a class="book-btn" href="${bookingHotelSearch(s.place, s.inn, s.out)}" target="_blank" rel="noopener">Booking ${PARTY.hotelRooms} 間房</a>
           </div>
           <div class="stay-opt high">
             <p class="tier">最高等 · 必住</p>
             <h4>${s.high.name}</h4>
             <p>${s.high.note}</p>
-            <p class="price">三間必住 ${s.nights} 晚約 NT$${hi.toLocaleString("zh-Hant")}<br/>若改豪華包棟約 NT$${hiApt.toLocaleString("zh-Hant")}</p>
+            <p class="price">${PARTY.hotelRooms} 間必住 ${s.nights} 晚約 NT$${hi.toLocaleString("zh-Hant")}<br/>若改豪華包棟約 NT$${hiApt.toLocaleString("zh-Hant")}</p>
             <a class="book-btn gold" href="${bookingHotelSearch(s.place, s.inn, s.out)}" target="_blank" rel="noopener">Booking 必住／家庭套房</a>
             <a class="book-btn ghost goldg" href="${airbnbSearch(s.apt.search, s.inn, s.out)}" target="_blank" rel="noopener">Airbnb 豪華整套</a>
           </div>
@@ -344,44 +342,44 @@ function renderBudget() {
     </tr>`;
   }).join("");
 
-  const per6std = Math.round(stdSum / 6);
-  const per6high = Math.round(highSum / 6);
+  const perStd = Math.round(stdSum / PARTY.size);
+  const perHigh = Math.round(highSum / PARTY.size);
   const hotelApt = STAYS.reduce((a, s) => a + aptTotal(s), 0);
   const hotel3 = STAYS.reduce((a, s) => a + hotel3Total(s), 0);
   const hotelHi = STAYS.reduce((a, s) => a + highHotelTotal(s), 0);
 
   foot.innerHTML = `<tr>
     <th></th>
-    <th>六人合計</th>
+    <th>四人合計</th>
     <th>NT$${stdSum.toLocaleString("zh-Hant")}</th>
     <th class="hi">NT$${highSum.toLocaleString("zh-Hant")}</th>
   </tr>
   <tr>
     <th></th>
-    <th>六人平均分擔</th>
-    <th>NT$${per6std.toLocaleString("zh-Hant")}</th>
-    <th class="hi">NT$${per6high.toLocaleString("zh-Hant")}</th>
+    <th>四人平均分擔</th>
+    <th>NT$${perStd.toLocaleString("zh-Hant")}</th>
+    <th class="hi">NT$${perHigh.toLocaleString("zh-Hant")}</th>
   </tr>`;
 
   summary.innerHTML = `
     <article>
       <p class="tag">普通 · 包棟分擔</p>
       <h3>NT$${stdSum.toLocaleString("zh-Hant")}</h3>
-      <p>六人合計　每人約 NT$${per6std.toLocaleString("zh-Hant")}</p>
+      <p>四人合計　每人約 NT$${perStd.toLocaleString("zh-Hant")}</p>
       <p>開腳經濟艙（春節旺季）＋ Freccia 2 等＋整套公寓</p>
     </article>
     <article class="high">
-      <p class="tag">全部最高等 · 必住 ×3 間</p>
+      <p class="tag">全部最高等 · 必住 ×${PARTY.hotelRooms} 間</p>
       <h3>NT$${highSum.toLocaleString("zh-Hant")}</h3>
-      <p>六人合計　每人約 NT$${per6high.toLocaleString("zh-Hant")}</p>
-      <p>商務艙拆票＋Freccia Business＋宮殿三間。不含嘉年華舞會。</p>
+      <p>四人合計　每人約 NT$${perHigh.toLocaleString("zh-Hant")}</p>
+      <p>商務艙拆票＋Freccia Business＋兩間家庭房。</p>
     </article>
     <article>
       <p class="tag">住宿怎麼分比較便宜</p>
-      <h3>包棟贏三間飯店</h3>
+      <h3>整套通常仍比兩間飯店省</h3>
       <p>14 晚整套約 NT$${hotelApt.toLocaleString("zh-Hant")}</p>
-      <p>普通飯店 ×3 約 NT$${hotel3.toLocaleString("zh-Hant")}</p>
-      <p>必住 ×3 約 NT$${hotelHi.toLocaleString("zh-Hant")}</p>
+      <p>普通飯店 ×${PARTY.hotelRooms} 約 NT$${hotel3.toLocaleString("zh-Hant")}</p>
+      <p>必住 ×${PARTY.hotelRooms} 約 NT$${hotelHi.toLocaleString("zh-Hant")}</p>
     </article>`;
 }
 
