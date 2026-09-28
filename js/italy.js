@@ -2,8 +2,8 @@ const START_DATE = "2027-02-06";
 
 const SEASON = [
   ["為什麼倒過來", "最後才米蘭，購物袋不用拖兩週", "羅馬進、米蘭出。Outlet 與金四角放最後兩天，2/21 託運就走。不是因為羅馬比較好玩，是行李。"],
-  ["羅馬", "四晚：梵蒂岡、競技場、龐貝", "2/7 落地梵蒂岡休。2/8 梵蒂岡、2/9 競技場、2/10 龐貝＋拿坡里當日回。2/11 轉佛羅倫斯。"],
-  ["佛羅倫斯", "四晚：烏菲茲、工坊、大衛", "2/11 轉場、2/12 烏菲茲、2/13 工坊與休息、2/14 學院大衛。2/14 是週日，不當情人節晚餐日。斜塔不排。"],
+  ["羅馬", "四晚：梵蒂岡、競技場、龐貝", "2/7 落地梵蒂岡休。2/8 梵蒂岡、2/9 競技場、2/10 只去龐貝，不進拿坡里市區。2/11 轉佛羅倫斯。"],
+  ["佛羅倫斯", "四晚：烏菲茲、工坊、大衛", "2/11 轉場、2/12 烏菲茲、2/13 預設留城。出太陽、小孩有力氣，才臨時坐火車去斜塔外觀。2/14 學院大衛。"],
   ["米蘭", "最後三晚：金四角＋Cenacolo＋Serravalle", "2/18 下午到、2/19 逛街與最後的晚餐、2/20 週六 Serravalle、2/21 早飛。袋子只過一晚。"],
   ["晚上", "16:30 是館關門，不是一天結束", "18:00 aperitivo、19:30 晚餐、21:00–21:30 夜走。"],
   ["不要加的", "嘉年華舞會、五漁村、阿瑪菲", "2 月南邊海岸多半關門。大包留到米蘭最後兩天再買。"],
@@ -11,7 +11,7 @@ const SEASON = [
 
 const COMPARE = [
   ["FCO → Termini", "Leonardo Express 約 32 分（採用）", "出站一台計程車。四人加兩顆箱通常裝得下"],
-  ["羅馬 → 龐貝／拿坡里", "Freccia 約 1 時 10 分（採用）", "拿坡里出站一台計程車去遺址。不要 Circumvesuviana"],
+  ["羅馬 → 龐貝", "Freccia 到拿坡里車站約 1 時 10 分，再計程車去遺址（採用）", "車站只是轉車，不進拿坡里市區。不要 Circumvesuviana"],
   ["羅馬 → 佛羅倫斯 SMN", "Frecciarossa 約 1 時 30 分（採用）", "A1 約 3 小時＋ZTL，不自己開"],
   ["佛羅倫斯 → 威尼斯 S. Lucia", "Frecciarossa 約 2 時 05 分（採用）", "島上沒車"],
   ["S. Lucia → 公寓（帶大箱）", "vaporetto 有大箱限制", "水上計程車＝威尼斯的計程車，車站碼頭現場叫"],
@@ -28,7 +28,7 @@ const BOOKINGS = [
   "開賣就訂：Freccia 2/10 羅馬⇄拿坡里、2/11 羅馬→佛羅倫斯、2/15 佛羅倫斯→威尼斯、2/18 威尼斯→米蘭。",
   "出發前下載：Free Now、itTaxi。義大利沒有便宜 UberX。四人加兩顆箱預設一台白色計程車。",
   "出發前 7 天：Serravalle 2/20 接駁。週四人多，但袋子隔天就上飛機。Outlet 做市區退稅；MXP 仍要海關 Otello 感應。",
-  "出發前 3 天：核對 BR96、Cenacolo、Freccia、披薩訂位（50 Kalò 或 Starita，不要排 Da Michele）。",
+  "出發前 3 天：核對 BR96、Cenacolo、Freccia。斜塔不先買票，2/13 早上再決定去不去。",
 ];
 
 const CHECKS = [
@@ -105,8 +105,8 @@ const TICKETS = [
     id: "pompeii",
     must: true,
     when: "出發前 2–4 週",
-    title: "龐貝＋拿坡里　2/10",
-    standard: "官方 pompeiisites.org。Freccia 羅馬⇄拿坡里約 1 時 10 分。Napoli Centrale 出站叫一台計程車去 Pompei Scavi（約 30–40 分）。禁止 Circumvesuviana。披薩訂 50 Kalò 或 Starita。不要加阿瑪菲。",
+    title: "龐貝　2/10（不進拿坡里）",
+    standard: "官方 pompeiisites.org。Freccia 到 Napoli Centrale 只為轉車，出站叫一台計程車去 Pompei Scavi。遺址門口或回程車站吃，不進拿坡里老城、不排披薩名店。禁止 Circumvesuviana。",
     premium: null
   },
   {
@@ -261,30 +261,29 @@ const DAYS = [
     ],
   },
   {
-    n: 5, city: "龐貝／拿坡里", title: "龐貝遺址＋拿坡里披薩",
+    n: 5, city: "龐貝", title: "龐貝遺址，不進拿坡里",
     stay: "羅馬第 4 晚　2/10 週三　當晚回羅馬打包",
     cover: "photos/italy/pompeii.jpg",
-    rent: { yes: false, label: "不自駕 · 計程車", reason: "羅馬→拿坡里 Freccia 比開車快。遺址這段車站叫一台計程車，禁止 Circumvesuviana。" },
-    hotel: { name: "續住羅馬；今晚打包", arrive: "傍晚 Freccia 回 Termini", checkIn: "已入住" },
+    rent: { yes: false, label: "不自駕 · 計程車", reason: "火車到拿坡里車站只為轉車。出站叫一台計程車去遺址，看完直接回。禁止 Circumvesuviana。" },
+    hotel: { name: "續住羅馬；今晚打包", arrive: "下午 Freccia 回 Termini", checkIn: "已入住" },
     photos: [
       { src: "photos/italy/pompeii.jpg", cap: "龐貝，二月較空但風大" },
-      { src: "photos/italy/naples.jpg", cap: "拿坡里灣與維蘇威，下午吃披薩短走" },
-      { src: "photos/italy/frecciarossa.jpg", cap: "羅馬⇄拿坡里約 1 時 10 分" },
+      { src: "photos/italy/frecciarossa.jpg", cap: "羅馬到拿坡里車站約 1 時 10 分，市區不進" },
+      { src: "photos/italy/rome-trastevere.jpg", cap: "傍晚回羅馬吃、打包" },
     ],
     transport: {
       mode: "Frecciarossa ＋ 一台計程車",
-      detail: "Termini→Napoli Centrale 約 1 時 10 分。出站排班或 Free Now 一台計程車到 Pompei Scavi（約 30–40 分）。不要 Circumvesuviana。傍晚 Freccia 回羅馬。",
+      detail: "Termini→Napoli Centrale 約 1 時 10 分。出站直接叫車到 Pompei Scavi，不進拿坡里。看完原車或另一台回車站，搭下一班 Freccia 回羅馬。",
       drive: "不從羅馬開車。A1 約 2 時 15 分，比火車慢。",
     },
     slots: [
-      { t: "07:00", title: "Termini 早班 Freccia", d: "對號。帶水、帽子、防滑靴。大箱留羅馬。" },
-      { t: "08:20", title: "拿坡里出站叫一台計程車", d: "直達遺址入口。現場排班或 Free Now。" },
-      { t: "09:10", title: "龐貝遺址", d: "官方票。家庭 2.5–3 小時，選一條線走。冬天約 15:30 趕人。" },
-      { t: "12:30", title: "披薩", d: "訂 50 Kalò 或 Starita，只為了不要帶小孩在寒風排隊。不要排 Da Michele。" },
-      { t: "14:00", title: "看小孩狀態", d: "還有力氣就老城走 40 分。累了直接回車站。不要加卡布里、阿瑪菲。" },
-      { t: "16:30", title: "Freccia 回羅馬", d: "約 1 時 10 分。誤點下一班。", buf: true },
-      { t: "18:30", title: "Termini 一台計程車回公寓", d: "簡單晚餐、打包。明天轉佛羅倫斯。" },
-      { t: "21:00", title: "早睡", d: "明天退房。" },
+      { t: "07:30", title: "Termini Freccia", d: "對號。帶水、帽子。大箱留羅馬。不必趕 7 點那班。" },
+      { t: "09:00", title: "車站叫一台計程車", d: "直達遺址入口。不走路去披薩店、不進老城。" },
+      { t: "09:40", title: "龐貝遺址", d: "官方票。選一條線，約 2–2.5 小時。風大就縮短。" },
+      { t: "12:15", title: "入口簡單吃", d: "門口或回車站吃。不訂拿坡里名店。" },
+      { t: "13:30", title: "計程車回車站、Freccia 回羅馬", d: "約 1 時 10 分。誤點下一班。", buf: true },
+      { t: "16:30", title: "Termini 回公寓", d: "休息。簡單晚餐、打包。明天轉佛羅倫斯。" },
+      { t: "20:30", title: "早睡", d: "明天退房。" },
     ],
   },
   {
@@ -334,25 +333,26 @@ const DAYS = [
     ],
   },
   {
-    n: 8, city: "佛羅倫斯", title: "Oltrarno 工坊，不出去",
+    n: 8, city: "佛羅倫斯", title: "留城，或臨時去斜塔外觀",
     stay: "佛羅倫斯第 3 晚　2/13 週六",
     cover: "photos/italy/florence-oltrarno.jpg",
-    rent: { yes: false, label: "不租車", reason: "斜塔取消。今天全步行，不坐火車。" },
-    hotel: { name: "續住", arrive: "已在公寓", checkIn: "已入住" },
+    rent: { yes: false, label: "不租車", reason: "預設走路。只有決定去斜塔才坐區域火車，當天買票，不先訂登塔。" },
+    hotel: { name: "續住", arrive: "已在公寓；若去斜塔傍晚回", checkIn: "已入住" },
     photos: [
-      { src: "photos/italy/florence-oltrarno.jpg", cap: "Santo Spirito 工坊" },
-      { src: "photos/italy/florence-ponte.jpg", cap: "舊橋，金鋪看就好" },
-      { src: "photos/italy/florence-duomo.jpg", cap: "主教堂若昨天沒進，今天補" },
+      { src: "photos/italy/florence-oltrarno.jpg", cap: "不去的話：Santo Spirito 慢慢走" },
+      { src: "photos/italy/pisa.jpg", cap: "要去才看外觀，不爬塔" },
+      { src: "photos/italy/florence-ponte.jpg", cap: "晚上都回佛羅倫斯睡" },
     ],
-    transport: { mode: "步行", detail: "公寓過河即到。不去比薩，也不加錫耶納。", drive: "不需要。" },
+    transport: { mode: "步行，或當天的 Regionale", detail: "早上看天氣和小孩。留下：過河走路。要去：SMN→Pisa Centrale 約 1 時–1 時 15 分，出站一台計程車到廣場，拍完就回，大約下午 4 點回公寓。不先買登塔票。", drive: "不需要。" },
     slots: [
-      { t: "09:30", title: "晚一點出門", d: "昨天烏菲茲，今天不用趕第一班。" },
-      { t: "10:30", title: "Oltrarno 工坊", d: "皮件、紙品、金工。小件可買，大袋不要。" },
-      { t: "13:00", title: "Santo Spirito 午餐", d: "廣場餐廳，不要觀光套餐。" },
-      { t: "15:00", title: "舊橋與河岸", d: "金鋪看窗。主教堂若昨天沒進內部，這時補鐘樓或內部。" },
-      { t: "17:40", title: "回公寓休息", d: "二月日落。這天可以真的休息。" },
-      { t: "19:30", title: "晚餐", d: "南岸走到吃到。不用訂情人節套餐。" },
-      { t: "21:00", title: "阿諾河短走", d: "22:00 回。" },
+      { t: "08:30", title: "決定", d: "出太陽、小孩睡夠，才去斜塔。下雨或還累，就留在佛羅倫斯。" },
+      { t: "09:10", title: "若去：SMN 區域火車", d: "車站買即可。大箱留公寓。只拍廣場，不爬。" },
+      { t: "10:30", title: "若留：Oltrarno", d: "工坊看到不想看就停。小件可買。" },
+      { t: "12:30", title: "午餐", d: "斜塔廣場簡單吃，或 Santo Spirito。" },
+      { t: "14:00", title: "若去：火車回", d: "不要加錫耶納，不要拖到傍晚。" },
+      { t: "16:30", title: "回公寓休息", d: "兩種走法都在這之前結束。" },
+      { t: "19:30", title: "晚餐", d: "南岸走到吃到。" },
+      { t: "21:00", title: "早回", d: "明天大衛，不用夜走。" },
     ],
   },
   {
@@ -745,7 +745,7 @@ const heroCycle = [
   ["photos/italy/florence-duomo.jpg", "佛羅倫斯主教堂"],
   ["photos/italy/rome-colosseum.jpg", "羅馬競技場"],
   ["photos/italy/florence-oltrarno.jpg", "佛羅倫斯 Oltrarno"],
-  ["photos/italy/naples.jpg", "拿坡里灣與維蘇威"],
+  ["photos/italy/pisa.jpg", "比薩斜塔，2/13 才決定去不去"],
   ["photos/italy/pompeii.jpg", "龐貝廣場"],
   ["photos/italy/rome-vatican.jpg", "梵蒂岡聖伯多祿"],
 ];

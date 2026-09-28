@@ -78,7 +78,7 @@ const STAYS = [
     nights: 4,
     inn: "2027-02-11",
     out: "2027-02-15",
-    why: "D6–D9　烏菲茲、Oltrarno 工坊、大衛",
+    why: "D6–D9　烏菲茲、2/13 可選斜塔外觀、大衛",
     apt: {
       name: "Oltrarno 或 SMN 步行 10 分整套（4 人、2 房）",
       note: "有廚房。Oltrarno 過河叫計程車（可進 ZTL）。同樣問熱水、暖氣、電梯。",
